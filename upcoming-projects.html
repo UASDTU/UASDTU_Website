@@ -1,7 +1,7 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
+
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home • UAS-DTU</title>
@@ -12,8 +12,8 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Crete+Round:ital@1&display=swap" rel="stylesheet"> 
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@700&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Crete+Round:ital@1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Saira+Semi+Condensed:wght@500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Crete+Round&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&display=swap" rel="stylesheet">
@@ -23,385 +23,417 @@
     <link href="public/aos-master/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="public/fullPage.js-master/dist/fullpage.css">
     <script src="public/fullPage.js-master/dist/fullpage.js"></script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FKKZ2KYGD0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FKKZ2KYGD0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
 
-  gtag('config', 'G-FKKZ2KYGD0');
-</script>
-</head>
+      gtag('config', 'G-FKKZ2KYGD0');
+    </script>
+  </head>
 
-<body>
-  
-<style>
-  .loader{
-    position:fixed;
-    top:0;
-    left:0;
-    z-index: 99;
-    width:100%;
-    height: 100%;
-    background-color: #ebebeb;
-    text-align: center;
-  }
+  <body>
 
-#fp-nav{
-  z-index: 80 !important;
-}
-
-
-@media only screen and (min-width: 600px){
-.loader>img{
-    width: 30vw;
-    margin-top: 25vh;
-    margin-right: 7vw;
-  }
-}
-
-@media only screen and (max-width: 600px){
-.loader>img{
-    width: 60vw;
-    margin-top: 25vh;
-    margin-right: 7vw;
-  }
-}
-
-.hidden{
-animation:fadeOut 1s;
-animation-fill-mode: forwards;
-}
-
-@keyframes fadeOut{
-100%{
-  opacity:0;
-  visibility: hidden;
-}
-}
-
-</style>
-<div class="loader">
-  <img src="./public/l.png" alt="">
-  <div class="preloader-wrapper active" style="display: block; margin:2vh auto;">
-    <div class="spinner-layer spinner-blue-only">
-      <div class="circle-clipper left">
-        <div class="circle"></div>
-      </div><div class="gap-patch">
-        <div class="circle"></div>
-      </div><div class="circle-clipper right">
-        <div class="circle"></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<script>
-  window.addEventListener("load",function(){
-    const loader = document.querySelector(".loader");
-
-    loader.className += " hidden";
-  });
-</script>
-
-
-
-  <script>    
-    document.addEventListener('DOMContentLoaded', function() {
-        var elems = document.querySelectorAll('.sidenav');
-        var instances = M.Sidenav.init(elems,{});
-      });
-    
-    $(document).ready(function(){
-      $('.collapsible').collapsible();
-    });
-  </script>
-  
-  <style>
-    body {
-      font-family: 'Nunito Sans', sans-serif !important; /* common font */
-    }
-    .main-wrapper{
-      position: relative;
-    }
-
-    .menu-holder{
-      position: fixed;
-      z-index: 50;
-    } 
-
-    .sidenav-overlay{
-      z-index: 0;
-    }
-
-    nav {
-      color: white;
-    }
-    @media only screen and (min-width: 993px){
-      nav a.sidenav-trigger {
-      display: block;
-      }
-    }
-    
-    .sidenav {
-      line-height: 1rem;
-    }
-
-    .sidenav li>a{
-        color: white;
-    }
-
-    .sidenav li>a>i.material-icons{
-      color: white;
-    }
-
-
-    ::-webkit-scrollbar {
-    display: none;
-  }
-
-  /* Track */
-  ::-webkit-scrollbar-track {
-   display: none;
-  }
-
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-       display: none;
-  }
-
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    display: none;
-  }
-
-.nav-links a {
-  font-family: 'Nunito Sans', sans-serif !important;
-  /* text-shadow: 0 0 10px #000b; */
-  font-size: 15px !important;
-  padding: 22px 0 10px 0 !important;
-  margin: 0 15px !important;
-  line-height: 100%;
-  text-transform: uppercase;
-}
-.nav-wrapper a:hover {
-  background-color: transparent !important;
-}
-
-.un::after {
-content: '';
-width: 0px;
-height: 1.5px;
-display: block;
-background: #fff;
-margin-top: 4px;
-transition: 300ms;
-}
-
-.un:hover::after {
-width: 100%;
-}
-  
-  </style>
-  
-  <div class="main-wrapper">
-    <div class="menu-holder" style="width:100%" id="menu">
-      <nav  class="transparent"  style="height: 4rem; box-shadow: none; background-color: #0004 !important;"> 
-          <!-- navbar content here  --> 
-          <div class="nav-wrapper">
-              <ul class="left">
-                <li><a href="#" class=" sidenav-trigger" data-target="slide_out" style="padding-top: 0rem;"><i class="material-icons" style="font-size:1.5rem;  color: white;">menu</i></a></li>
-              </ul>
-              <ul>
-                <li style="height: 5rem; width: 5rem;"><a href="./index.html" style="height: 5rem; width: 7rem; transform: translate(0, 0.5rem);"><img src="./public/whitelogo3.png" alt="" style="margin-left: 0; height: 3rem;"></a></li>
-              </ul>
-              <ul class="hide-on-med-and-down right nav-links" style="padding-right: 12rem;">
-                <li><a href="solution.html" class="un">Solutions</a></li>
-                <li><a href="hangar.html" class="un">Hangar</a></li>
-                <li><a href="upcoming-projects.html" class="un">Upcoming Projects</a></li>
-                <li><a href="contact.html" class="un">Contact Us</a></li>
-              </ul>
-          </div>
-      </nav>
-  
-      <ul class="sidenav #000000 black" style="color:#eeeeee;" id="slide_out">
-        <!-- <li><a class="sidenav-close" href="#!"><i class="material-icons" style="font-size:2rem;">menu</i></a></li> -->
-        <li><a href="index.html" style="width:100%; height: 100%;"><img src="./public/whitelogo2.png" alt="" style="transform:scale(2); width:100%; height: 100%; margin-top: 36px;"></a></li>
-        <hr style="margin: 1rem 2.5rem 1rem 2rem;">
-        <li><a href="index.html" class="active hide-on-med-and-up"><i class="material-icons">home</i> Home</a></li>
-        <li><a href="about.html"><i class="material-icons">info</i> About Us</a></li>
-        <li><a href="hangar.html"><i class="material-icons">airplanemode_active</i> Hangar</a></li>
-        <li>
-          <ul class="collapsible" style="padding-left: 1rem;">
-          <li>
-            <div class="collapsible-header"><i class="material-icons" style="margin-right: 1.8rem;">group</i> <b>Team</b></div>
-            <div class="collapsible-body"> 
-              <ul  style="background: black; padding-left: 4rem;">
-                  <li><a href="mentors.html">Mentors</a></li>
-                  <li><a href="curr-members.html">Current Members</a></li>
-                  <li><a href="past-members.html">Past Members</a></li>
-              </ul>
-            </div>
-          </li>
-          </ul>
-        </li>
-        <li><a href="achievements.html"><i class="material-icons">emoji_events</i> Achievements</a></li>
-        <li><a href="upcoming_events.html" class="active"><i class="material-icons">home</i> Upcoming Events</a></li>
-        <li><a href="upcoming-projects.html" class="active"><i class="material-icons">precision_manufacturing</i> Upcoming Projects</a></li>
-        <li><a href="solution.html" class="active"><i class="material-icons">settings</i> Solutions</a></li>
-        <li><a href="contact.html"><i class="material-icons">email</i> Contact Us</a></li>
-      </ul>
-    </div>  
-  
-
-
-<style>   
-    nav.transparent {
-        position: fixed !important;
+    <style>
+      .loader {
+        position: fixed;
         top: 0;
-        background-color: rgba(0,0,0,0.75) !important;
-    }
+        left: 0;
+        z-index: 99;
+        width: 100%;
+        height: 100%;
+        background-color: #ebebeb;
+        text-align: center;
+      }
 
-    .ctn{
-        display: flex;
-        flex-direction: row;
-    }
-
-    .upcoming_events .col{
-        padding:0 3.5vw;
-    }
-
-    .card-panel h5{
-        font-size: 20px;
-        color:  #000;
-        font-family: 'Crete Round', serif;
-        padding: 0 20px;
-    }
-
-    .card-panel p{
-        color: #555;
-        font-family: 'DM Sans', sans-serif;
-        padding: 0 20px;
-    }
-
-    .card-panel {
-        display: inline-block;
-        padding: 0;
-    }
-    .main {
-        background-image: url(./public/texture.jpg); 
-        background-size: cover; 
-        background-attachment: fixed; 
-        padding: 100px 0 40px 0;
-    }
-
-</style>
+      #fp-nav {
+        z-index: 80 !important;
+      }
 
 
-<div class="main">
-  <!-- Card Container -->
-  
-    
-  <div class="row card-container upcoming_events">
-  
-  <div class="col l4 m4 s12">     
-    <div class="card">
-        <div class="card-image">
-          <img src="./public/fpga.jpeg">
-        </div>
-        <div class="card-content">
-            <div class="card-title">FPGA based UAV Controller</div>  
-          <p>A Field Programmable Gate Array (FPGA) is essentially a re-programmable integrated circuit in the form of a chip. The team aims to develop a flight controller of its own using a Field Programmable Gate Array (FPGA). FPGA can carry out various basic operations at the same time without competing for resources. This research is being conducted to make a flight controller which is flexible in utility so that it could be used with a variety of systems.</p>
+      @media only screen and (min-width: 600px) {
+        .loader>img {
+          width: 30vw;
+          margin-top: 25vh;
+          margin-right: 7vw;
+        }
+      }
+
+      @media only screen and (max-width: 600px) {
+        .loader>img {
+          width: 60vw;
+          margin-top: 25vh;
+          margin-right: 7vw;
+        }
+      }
+
+      .hidden {
+        animation: fadeOut 1s;
+        animation-fill-mode: forwards;
+      }
+
+      @keyframes fadeOut {
+        100% {
+          opacity: 0;
+          visibility: hidden;
+        }
+      }
+    </style>
+    <div class="loader">
+      <img src="./public/l.png" alt="">
+      <div class="preloader-wrapper active" style="display: block; margin:2vh auto;">
+        <div class="spinner-layer spinner-blue-only">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div>
+          <div class="gap-patch">
+            <div class="circle"></div>
+          </div>
+          <div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
         </div>
       </div>
     </div>
-    
-  
-  
-  
-  <div class="col l4 m4 s12">     
-    <div class="card">
-        <div class="card-image">
-          <img src="./public/agg_control4.jpg">
-        </div>
-        <div class="card-content">
-            <div class="card-title">Aggressive Control of UAVs: Passing through constrained spaces</div>  
-          <p>UAVs capable of aggressive maneuvres to conduct task-specific activities (i.e throwing a ball through a window) along with the ability to fly across heavily constrained and restricted areas (i.e In between circular loops, tree branches, and cable wires). These applications of minimum snap trajectory control will be highly beneficial in conducting multi-variant tasks and rapid collection of Intelligence, Surveillance, and Reconnaissance (ISR) information in the urban areas.</p>
-        </div>
+
+    <script>
+      window.addEventListener("load", function () {
+        const loader = document.querySelector(".loader");
+
+        loader.className += " hidden";
+      });
+    </script>
+
+
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var elems = document.querySelectorAll('.sidenav');
+        var instances = M.Sidenav.init(elems, {});
+      });
+
+      $(document).ready(function () {
+        $('.collapsible').collapsible();
+      });
+    </script>
+
+    <style>
+      body {
+        font-family: 'Nunito Sans', sans-serif !important;
+        /* common font */
+      }
+
+      .main-wrapper {
+        position: relative;
+      }
+
+      .menu-holder {
+        position: fixed;
+        z-index: 50;
+      }
+
+      .sidenav-overlay {
+        z-index: 0;
+      }
+
+      nav {
+        color: white;
+      }
+
+      @media only screen and (min-width: 993px) {
+        nav a.sidenav-trigger {
+          display: block;
+        }
+      }
+
+      .sidenav {
+        line-height: 1rem;
+      }
+
+      .sidenav li>a {
+        color: white;
+      }
+
+      .sidenav li>a>i.material-icons {
+        color: white;
+      }
+
+
+      ::-webkit-scrollbar {
+        display: none;
+      }
+
+      /* Track */
+      ::-webkit-scrollbar-track {
+        display: none;
+      }
+
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        display: none;
+      }
+
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+        display: none;
+      }
+
+      .nav-links a {
+        font-family: 'Nunito Sans', sans-serif !important;
+        /* text-shadow: 0 0 10px #000b; */
+        font-size: 15px !important;
+        padding: 22px 0 10px 0 !important;
+        margin: 0 15px !important;
+        line-height: 100%;
+        text-transform: uppercase;
+      }
+
+      .nav-wrapper a:hover {
+        background-color: transparent !important;
+      }
+
+      .un::after {
+        content: '';
+        width: 0px;
+        height: 1.5px;
+        display: block;
+        background: #fff;
+        margin-top: 4px;
+        transition: 300ms;
+      }
+
+      .un:hover::after {
+        width: 100%;
+      }
+    </style>
+
+    <div class="main-wrapper">
+      <div class="menu-holder" style="width:100%" id="menu">
+        <nav class="transparent" style="height: 4rem; box-shadow: none; background-color: #0004 !important;">
+          <!-- navbar content here  -->
+          <div class="nav-wrapper">
+            <ul class="left">
+              <li><a href="#" class=" sidenav-trigger" data-target="slide_out" style="padding-top: 0rem;"><i
+                    class="material-icons" style="font-size:1.5rem;  color: white;">menu</i></a></li>
+            </ul>
+            <ul>
+              <li style="height: 5rem; width: 5rem;"><a href="./index.html"
+                  style="height: 5rem; width: 7rem; transform: translate(0, 0.5rem);"><img src="./public/whitelogo3.png"
+                    alt="" style="margin-left: 0; height: 3rem;"></a></li>
+            </ul>
+            <ul class="hide-on-med-and-down right nav-links" style="padding-right: 12rem;">
+              <li><a href="curr-members.html" class="un">Team</a></li>
+              <li><a href="about.html" class="un">About Us</a></li>
+              <li><a href="achievements.html" class="un">Achievements</a></li>
+              <li><a href="contact.html" class="un">Contact Us</a></li>
+            </ul>
+          </div>
+        </nav>
+
+        <ul class="sidenav #000000 black" style="color:#eeeeee;" id="slide_out">
+          <!-- <li><a class="sidenav-close" href="#!"><i class="material-icons" style="font-size:2rem;">menu</i></a></li> -->
+          <li><a href="index.html" style="width:100%; height: 100%;"><img src="./public/whitelogo2.png" alt=""
+                style="transform:scale(2); width:100%; height: 100%; margin-top: 36px;"></a></li>
+          <hr style="margin: 1rem 2.5rem 1rem 2rem;">
+          <li><a href="index.html" class="active hide-on-med-and-up"><i class="material-icons">home</i> Home</a></li>
+          <li><a href="about.html"><i class="material-icons">info</i> About Us</a></li>
+          <li><a href="hangar.html"><i class="material-icons">airplanemode_active</i> Hangar</a></li>
+          <li>
+            <ul class="collapsible" style="padding-left: 1rem;">
+              <li>
+                <div class="collapsible-header"><i class="material-icons" style="margin-right: 1.8rem;">group</i>
+                  <b>Team</b></div>
+                <div class="collapsible-body">
+                  <ul style="background: black; padding-left: 4rem;">
+                    <li><a href="mentors.html">Mentors</a></li>
+                    <li><a href="curr-members.html">Current Members</a></li>
+                    <li><a href="past-members.html">Past Members</a></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li><a href="achievements.html"><i class="material-icons">emoji_events</i> Achievements</a></li>
+          <li><a href="upcoming_events.html" class="active"><i class="material-icons">home</i> Upcoming Events</a></li>
+          <li><a href="upcoming-projects.html" class="active"><i class="material-icons">precision_manufacturing</i>
+              Upcoming Projects</a></li>
+          <li><a href="solution.html" class="active"><i class="material-icons">settings</i> Solutions</a></li>
+          <li><a href="contact.html"><i class="material-icons">email</i> Contact Us</a></li>
+        </ul>
       </div>
-    </div>
-    
-  
-  
-  
-  <div class="col l4 m4 s12">     
-    <div class="card">
-        <div class="card-image">
-          <img src="./public/gps-spoofing4.jpg">
+
+
+
+      <style>
+        nav.transparent {
+          position: fixed !important;
+          top: 0;
+          background-color: rgba(0, 0, 0, 0.75) !important;
+        }
+
+        .ctn {
+          display: flex;
+          flex-direction: row;
+        }
+
+        .upcoming_events .col {
+          padding: 0 3.5vw;
+        }
+
+        .card-panel h5 {
+          font-size: 20px;
+          color: #000;
+          font-family: 'Crete Round', serif;
+          padding: 0 20px;
+        }
+
+        .card-panel p {
+          color: #555;
+          font-family: 'DM Sans', sans-serif;
+          padding: 0 20px;
+        }
+
+        .card-panel {
+          display: inline-block;
+          padding: 0;
+        }
+
+        .main {
+          background-image: url(./public/texture.jpg);
+          background-size: cover;
+          background-attachment: fixed;
+          padding: 100px 0 40px 0;
+        }
+      </style>
+
+
+      <div class="main">
+        <!-- Card Container -->
+
+
+        <div class="row card-container upcoming_events">
+
+          <div class="col l4 m4 s12">
+            <div class="card">
+              <div class="card-image">
+                <img src="./public/fpga.jpeg">
+              </div>
+              <div class="card-content">
+                <div class="card-title">FPGA based UAV Controller</div>
+                <p>A Field Programmable Gate Array (FPGA) is essentially a re-programmable integrated circuit in the
+                  form of a chip. The team aims to develop a flight controller of its own using a Field Programmable
+                  Gate Array (FPGA). FPGA can carry out various basic operations at the same time without competing for
+                  resources. This research is being conducted to make a flight controller which is flexible in utility
+                  so that it could be used with a variety of systems.</p>
+              </div>
+            </div>
+          </div>
+
+
+
+
+          <div class="col l4 m4 s12">
+            <div class="card">
+              <div class="card-image">
+                <img src="./public/agg_control4.jpg">
+              </div>
+              <div class="card-content">
+                <div class="card-title">Aggressive Control of UAVs: Passing through constrained spaces</div>
+                <p>UAVs capable of aggressive maneuvres to conduct task-specific activities (i.e throwing a ball through
+                  a window) along with the ability to fly across heavily constrained and restricted areas (i.e In
+                  between circular loops, tree branches, and cable wires). These applications of minimum snap trajectory
+                  control will be highly beneficial in conducting multi-variant tasks and rapid collection of
+                  Intelligence, Surveillance, and Reconnaissance (ISR) information in the urban areas.</p>
+              </div>
+            </div>
+          </div>
+
+
+
+
+          <div class="col l4 m4 s12">
+            <div class="card">
+              <div class="card-image">
+                <img src="./public/gps-spoofing4.jpg">
+              </div>
+              <div class="card-content">
+                <div class="card-title">GPS Spoofing</div>
+                <p>GPS spoofing is an attack in which a radio transmitter located near the target is used to interfere
+                  with a legitimate GPS signals. The attacker can transmit no data at all or could transmit inaccurate
+                  coordinates. Recently, GPS spoofing attack on UAV has attracted widespread research interests due to
+                  the vulnerability of civilian GPS signal. GPS spoofing ensures that the UAV remains undetected and
+                  this is useful for UAV used in defense.</p>
+              </div>
+            </div>
+          </div>
+
         </div>
-        <div class="card-content">
-            <div class="card-title">GPS Spoofing</div>  
-          <p>GPS spoofing is an attack in which a radio transmitter located near the target is used to interfere with a legitimate GPS signals. The attacker can transmit no data at all or could transmit inaccurate coordinates. Recently, GPS spoofing attack on UAV has attracted widespread research interests due to the vulnerability of civilian GPS signal. GPS spoofing ensures that the UAV remains undetected and this is useful for UAV used in defense.</p>
+
+
+
+
+        <div class="row card-container upcoming_events">
+
+          <div class="col l4 m4 s12">
+            <div class="card">
+              <div class="card-image">
+                <img src="./public/arm-ugv2.jpg">
+              </div>
+              <div class="card-content">
+                <div class="card-title">Mechanical Arm on UGV</div>
+                <p>A 6DOF Robotic Arm and Unmanned Ground Vehicle (UGV) setup is being developed to revolutionize the
+                  field of soft-crop agriculture by automating crop harvesting and management interventions through
+                  implementation of visual-based crop detection deep learning models on the setup. The team is further
+                  looking forward to implement its existing swarming capabilities to create a swarm of crop harvesting
+                  UGV in the later stages of the project.</p>
+              </div>
+            </div>
+          </div>
+
+
+
+
+          <div class="col l4 m4 s12">
+            <div class="card">
+              <div class="card-image">
+                <img src="./public/arm-uav.jpg">
+              </div>
+              <div class="card-content">
+                <div class="card-title">Mechanical Arm on UAV</div>
+                <p>The crew aims to develop an AI-based integrated system between the UAV and Robotic Arm, capable of
+                  object detection, tracking, and pick and drop capabilities (i.e collecting objects from water
+                  surfaces, twisting a doorknob, plucking fruit from trees, etc.)</p>
+              </div>
+            </div>
+          </div>
+
+
+
+
+          <div class="col l4 m4 s12">
+            <div class="card">
+              <div class="card-image">
+                <img src="./public/morph-wing2.jpg">
+              </div>
+              <div class="card-content">
+                <div class="card-title">Designing and Fabrication of fixed-wing UAV having Morphing Characteristics
+                </div>
+                <p>We are working towards equipping our UAVs with Morphing characteristic designs in the near future.
+                  The wings of these UAVs would be having the provision to change their shape seamlessly in order to
+                  provide optimal performance according to external conditions and also to adapt themselves for
+                  mission-specific tasks in order to achieve optimum endurance.</p>
+              </div>
+            </div>
+          </div>
+
         </div>
-      </div>
-    </div>
-       
-  </div>
-  
-  
-  
-    
-  <div class="row card-container upcoming_events">
-  
-  <div class="col l4 m4 s12">     
-    <div class="card">
-        <div class="card-image">
-          <img src="./public/arm-ugv2.jpg">
-        </div>
-        <div class="card-content">
-            <div class="card-title">Mechanical Arm on UGV</div>  
-          <p>A 6DOF Robotic Arm and Unmanned Ground Vehicle (UGV) setup is being developed to revolutionize the field of soft-crop agriculture by automating crop harvesting and management interventions through implementation of visual-based crop detection deep learning models on the setup. The team is further looking forward to implement its existing swarming capabilities to create a swarm of crop harvesting UGV in the later stages of the project.</p>
-        </div>
-      </div>
-    </div>
-    
-  
-  
-  
-  <div class="col l4 m4 s12">     
-    <div class="card">
-        <div class="card-image">
-          <img src="./public/arm-uav.jpg">
-        </div>
-        <div class="card-content">
-            <div class="card-title">Mechanical Arm on UAV</div>  
-          <p>The crew aims to develop an AI-based integrated system between the UAV and Robotic Arm, capable of object detection, tracking, and pick and drop capabilities (i.e collecting objects from water surfaces, twisting a doorknob, plucking fruit from trees, etc.)</p>
-        </div>
-      </div>
-    </div>
-    
-  
-  
-  
-  <div class="col l4 m4 s12">     
-    <div class="card">
-        <div class="card-image">
-          <img src="./public/morph-wing2.jpg">
-        </div>
-        <div class="card-content">
-            <div class="card-title">Designing and Fabrication of fixed-wing UAV having Morphing Characteristics</div>  
-          <p>We are working towards equipping our UAVs with Morphing characteristic designs in the near future. The wings of these UAVs would be having the provision to change their shape seamlessly in order to provide optimal performance according to external conditions and also to adapt themselves for mission-specific tasks in order to achieve optimum endurance.</p>
-        </div>
-      </div>
-    </div>
-       
-  </div>
-  
-  
-  
-    
-<!--   <div class="row card-container upcoming_events">
+
+
+
+
+        <!--   <div class="row card-container upcoming_events">
   
   <div class="col l4 m4 s12">     
     <div class="card">
@@ -416,9 +448,9 @@ width: 100%;
     </div>
     
    -->
-  
-  
-  <!-- <div class="col l4 m4 s12">     
+
+
+        <!-- <div class="col l4 m4 s12">     
     <div class="card">
         <div class="card-image">
           <img src="./public/multitracker-opencv2.jpg">
@@ -445,92 +477,96 @@ width: 100%;
     </div>
   </div>
    -->
-       
-<!--   </div>
- -->  
-  
-  
-</div>
 
-<script>
-    document.title = "Upcoming Projects • UAS-DTU";
-</script>
+        <!--   </div>
+ -->
 
-<section id="footer">
-<style>
-    .logos a>i{
-        padding-right: 0.4rem;
-    }
-    #contact .col{
-        padding-right: 2rem;
-        color:#cccccc;
-    }
-    #contact .map{
-        text-align: left;
-    }
 
-    #contact .row{
-        margin-bottom: 0;
-    }
-    .logos a{
-         color:grey
-    }
-
-     @media only screen and (min-width:800px){
-        .row #g_map{
-        padding-left: 3vw; 
-        padding-right: 3vw;
-   }
-     }    
-</style>
-
-<div id="contact" style="padding: 0 4rem 0 4rem; background:black; position: relative;">
-  <div class="row">
-      <div class="col l3 m12 s12">
-          <h4 style="white-space: nowrap;">UAS-DTU</h4>
-          <p class="text">A team of enthusiastic undergraduates, working to providing the solutions for
-              urban
-              surveillance needs. </p>
-          <div class="logos">
-              <a href="https://www.facebook.com/uas.dtu/" target="blank"><i
-                      class="fab fa-facebook-square fa-2x"></i></a>
-              <a href="https://in.linkedin.com/company/uas-dtu" target="blank"><i
-                      class="fab fa-linkedin fa-2x"></i></i></a>
-              <a href="https://www.youtube.com/channel/UCmOV4uiBHoHzf5ZrE1z6WQg" target="blank"><i
-                      class="fab fa-youtube fa-2x"></i></a>
-              <a href="https://www.instagram.com/uas_dtu/" target="blank"><i
-                      class="fab fa-instagram fa-2x"></i></i></a>
-          </div>
       </div>
 
-      <div class="col l6 m12 s12" id="g_map">
-          <h4 class="map">Map help:</h4>
-          <div style="overflow: hidden;">
-              <iframe
+      <script>
+        document.title = "Upcoming Projects • UAS-DTU";
+      </script>
+
+      <section id="footer">
+        <style>
+          .logos a>i {
+            padding-right: 0.4rem;
+          }
+
+          #contact .col {
+            padding-right: 2rem;
+            color: #cccccc;
+          }
+
+          #contact .map {
+            text-align: left;
+          }
+
+          #contact .row {
+            margin-bottom: 0;
+          }
+
+          .logos a {
+            color: grey
+          }
+
+          @media only screen and (min-width:800px) {
+            .row #g_map {
+              padding-left: 3vw;
+              padding-right: 3vw;
+            }
+          }
+        </style>
+
+        <div id="contact" style="padding: 0 4rem 0 4rem; background:black; position: relative;">
+          <div class="row">
+            <div class="col l3 m12 s12">
+              <h4 style="white-space: nowrap;">UAS-DTU</h4>
+              <p class="text">A team of enthusiastic undergraduates, working to providing the solutions for
+                urban
+                surveillance needs. </p>
+              <div class="logos">
+                <a href="https://www.facebook.com/uas.dtu/" target="blank"><i
+                    class="fab fa-facebook-square fa-2x"></i></a>
+                <a href="https://in.linkedin.com/company/uas-dtu" target="blank"><i
+                    class="fab fa-linkedin fa-2x"></i></i></a>
+                <a href="https://www.youtube.com/channel/UCmOV4uiBHoHzf5ZrE1z6WQg" target="blank"><i
+                    class="fab fa-youtube fa-2x"></i></a>
+                <a href="https://www.instagram.com/uas_dtu/" target="blank"><i
+                    class="fab fa-instagram fa-2x"></i></i></a>
+              </div>
+            </div>
+
+            <div class="col l6 m12 s12" id="g_map">
+              <h4 class="map">Map help:</h4>
+              <div style="overflow: hidden;">
+                <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3498.027403024808!2d77.11499645105123!3d28.748598782285452!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d01270184b37d%3A0x31d84edc5468f356!2sUAS+DTU!5e0!3m2!1sen!2sin!4v1516991611933"
                   frameborder="0" style="border:0; width:50rem;height:15rem;"></iframe>
+              </div>
+
+            </div>
+
+
+            <div class="col l3 m12 s12">
+              <h4>Reach us at:</h4>
+              <p class="text">LW2FF1, Delhi Technological University, Delhi - 110042</p>
+              <p id="phone1"><i class="fas fa-phone-alt"></i> +91-84484 60692</p>
+              <p><i class="fas fa-phone-alt"></i> +91-78383 72964</p>
+              <p><i class="fas fa-phone-alt"></i> +91-83838 43931 </p>
+              <p><i class="fas fa-envelope"></i> uasdtu@dtu.ac.in</p>
+              <p>&copy; 2025 UAS-DTU. All rights reserved.</p>
+
+            </div>
+
           </div>
+        </div>
 
-      </div>
 
-
-      <div class="col l3 m12 s12">
-        <h4>Reach us at:</h4>
-        <p class="text">LW2FF1, Delhi Technological University, Delhi - 110042</p>
-        <p id="phone1"><i class="fas fa-phone-alt"></i> +91-84484 60692</p>
-        <p><i class="fas fa-phone-alt"></i> +91-78383 72964</p>
-        <p><i class="fas fa-phone-alt"></i> +91-83838 43931 </p>
-        <p><i class="fas fa-envelope"></i> uasdtu@dtu.ac.in</p>
-        <p>&copy; 2025 UAS-DTU. All rights reserved.</p>
-
-      </div>
-      
-  </div>
-</div>
-
-        
     </div>
-    </section>    
-</div>
-</body>
+    </section>
+    </div>
+  </body>
+
 </html>
