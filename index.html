@@ -1,7 +1,7 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
+
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home • UAS-DTU</title>
@@ -12,8 +12,8 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Crete+Round:ital@1&display=swap" rel="stylesheet"> 
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@700&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Crete+Round:ital@1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Saira+Semi+Condensed:wght@500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Crete+Round&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&display=swap" rel="stylesheet">
@@ -23,649 +23,679 @@
     <link href="public/aos-master/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="public/fullPage.js-master/dist/fullpage.css">
     <script src="public/fullPage.js-master/dist/fullpage.js"></script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FKKZ2KYGD0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FKKZ2KYGD0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
 
-  gtag('config', 'G-FKKZ2KYGD0');
-</script>
-</head>
+      gtag('config', 'G-FKKZ2KYGD0');
+    </script>
+  </head>
 
-<body>
+  <body>
 
-  <style>
-    .loader{
-      position:fixed;
-      top:0;
-      left:0;
-      z-index: 99;
-      width:100%;
-      height: 100%;
-      background-color: #ebebeb;
-      text-align: center;
-    }
+    <style>
+      .loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 99;
+        width: 100%;
+        height: 100%;
+        background-color: #ebebeb;
+        text-align: center;
+      }
 
-  #fp-nav{
-    z-index: 80 !important;
-  }
+      #fp-nav {
+        z-index: 80 !important;
+      }
 
 
-@media only screen and (min-width: 600px){
-  .loader>img{
-      width: 30vw;
-      margin-top: 25vh;
-      margin-right: 7vw;
-    }
-}
+      @media only screen and (min-width: 600px) {
+        .loader>img {
+          width: 30vw;
+          margin-top: 25vh;
+          margin-right: 7vw;
+        }
+      }
 
-@media only screen and (max-width: 600px){
-  .loader>img{
-      width: 60vw;
-      margin-top: 25vh;
-      margin-right: 7vw;
-    }
-}
+      @media only screen and (max-width: 600px) {
+        .loader>img {
+          width: 60vw;
+          margin-top: 25vh;
+          margin-right: 7vw;
+        }
+      }
 
-.hidden{
-  animation:fadeOut 1s;
-  animation-fill-mode: forwards;
-}
+      .hidden {
+        animation: fadeOut 1s;
+        animation-fill-mode: forwards;
+      }
 
-@keyframes fadeOut{
-  100%{
-    opacity:0;
-    visibility: hidden;
-  }
-}
-
-  </style>
-  <div class="loader">
-    <img src="./public/l.png" alt="">
-    <div class="preloader-wrapper active" style="display: block; margin:2vh auto;">
-      <div class="spinner-layer spinner-blue-only">
-        <div class="circle-clipper left">
-          <div class="circle"></div>
-        </div><div class="gap-patch">
-          <div class="circle"></div>
-        </div><div class="circle-clipper right">
-          <div class="circle"></div>
+      @keyframes fadeOut {
+        100% {
+          opacity: 0;
+          visibility: hidden;
+        }
+      }
+    </style>
+    <div class="loader">
+      <img src="./public/l.png" alt="">
+      <div class="preloader-wrapper active" style="display: block; margin:2vh auto;">
+        <div class="spinner-layer spinner-blue-only">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div>
+          <div class="gap-patch">
+            <div class="circle"></div>
+          </div>
+          <div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <script>
-    window.addEventListener("load",function(){
-      const loader = document.querySelector(".loader");
+    <script>
+      window.addEventListener("load", function () {
+        const loader = document.querySelector(".loader");
 
-      loader.className += " hidden";
-    });
-  </script>
-
-
-  <script>    
-    document.addEventListener('DOMContentLoaded', function() {
-        var elems = document.querySelectorAll('.sidenav');
-        var instances = M.Sidenav.init(elems,{});
+        loader.className += " hidden";
       });
-    
-    $(document).ready(function(){
-      $('.collapsible').collapsible();
-    });
-  </script>
-  
-  <style>
-    body {
-      font-family: 'Nunito Sans', sans-serif !important; /* common font */
-    }
-    .main-wrapper{
-      position: relative;
-    }
+    </script>
 
-    .menu-holder{
-      position: fixed;
-      z-index: 50;
-    } 
 
-    nav {
-      color: white;
-    }
-    @media only screen and (min-width: 993px){
-      nav a.sidenav-trigger {
-      display: block;
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var elems = document.querySelectorAll('.sidenav');
+        var instances = M.Sidenav.init(elems, {});
+      });
+
+      $(document).ready(function () {
+        $('.collapsible').collapsible();
+      });
+    </script>
+
+    <style>
+      body {
+        font-family: 'Nunito Sans', sans-serif !important;
+        /* common font */
       }
-    }
-    
-    .sidenav-overlay{
-      z-index: 0;
-    }
 
-    .sidenav {
-      line-height: 1rem;
-    }
+      .main-wrapper {
+        position: relative;
+      }
 
-    .sidenav li>a{
+      .menu-holder {
+        position: fixed;
+        z-index: 50;
+      }
+
+      nav {
         color: white;
-    }
+      }
 
-    .sidenav li>a>i.material-icons{
-      color: white;
-    }
+      @media only screen and (min-width: 993px) {
+        nav a.sidenav-trigger {
+          display: block;
+        }
+      }
+
+      .sidenav-overlay {
+        z-index: 0;
+      }
+
+      .sidenav {
+        line-height: 1rem;
+      }
+
+      .sidenav li>a {
+        color: white;
+      }
+
+      .sidenav li>a>i.material-icons {
+        color: white;
+      }
 
 
-    ::-webkit-scrollbar {
-    display: none;
-  }
+      ::-webkit-scrollbar {
+        display: none;
+      }
 
-  /* Track */
-  ::-webkit-scrollbar-track {
-   display: none;
-  }
+      /* Track */
+      ::-webkit-scrollbar-track {
+        display: none;
+      }
 
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-       display: none;
-  }
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        display: none;
+      }
 
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    display: none;
-  }
-  
-    .logos a>i{
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+        display: none;
+      }
+
+      .logos a>i {
         padding-right: 0.4rem;
-    }
-    .col{
+      }
+
+      .col {
         padding-right: 2rem;
-        color:#cccccc;
-    }
-    #contact .map{
+        color: #cccccc;
+      }
+
+      #contact .map {
         text-align: left;
-    }
+      }
 
-    #contact .row{
+      #contact .row {
         margin-bottom: 0;
-    }
-    .logos a{
-         color:grey
-    }
+      }
 
-     @media only screen and (min-width:800px){
-        .row #g_map{
-        padding-left: 7rem; 
-        padding-right: 7rem;
-   }
-     }    
+      .logos a {
+        color: grey
+      }
 
-  .sps h3{
-    font-size: 8vh;
-  }
+      @media only screen and (min-width:800px) {
+        .row #g_map {
+          padding-left: 7rem;
+          padding-right: 7rem;
+        }
+      }
 
-  @media only screen and (max-width:600px){
-  .sps .sps_logo{
-  padding-top: 3rem;
-  margin-left: 0rem;
-  margin-right: 0rem;
-  }
+      .sps h3 {
+        font-size: 8vh;
+      }
 
-  .sps_logo a{
-  padding-right: 1rem;
-  padding-bottom: 2rem;
-  display: inline-block;
-  }    
-  .sps_logo img {
-    height: 10vh;
-  }
-  }
+      @media only screen and (max-width:600px) {
+        .sps .sps_logo {
+          padding-top: 3rem;
+          margin-left: 0rem;
+          margin-right: 0rem;
+        }
 
-  @media only screen and (min-width:600px){
-    .sps .sps_logo{
-    padding-top: 10vh;
-    margin-left: 4rem;
-    margin-right: 4rem;
-  }
+        .sps_logo a {
+          padding-right: 1rem;
+          padding-bottom: 2rem;
+          display: inline-block;
+        }
 
-  .sps a{
-  padding-right: 3rem;
-  padding-bottom: 2rem;
-  display: inline-block;
-  }
-  .sps img {
-    height: 100px;
-  }
-  } 
+        .sps_logo img {
+          height: 10vh;
+        }
+      }
 
-  .upcoming_events h2{
-    color:#fff;
-  }
+      @media only screen and (min-width:600px) {
+        .sps .sps_logo {
+          padding-top: 10vh;
+          margin-left: 4rem;
+          margin-right: 4rem;
+        }
 
-  .upcoming_events{
-    background-image: url("./public/taylor-van-riper-yQorCngxzwI-unsplash.jpg");
-    background-position: 50% 55%;
-  }
+        .sps a {
+          padding-right: 3rem;
+          padding-bottom: 2rem;
+          display: inline-block;
+        }
 
-  @media only screen and (min-width:600px){
-    .upcoming_events{
-      height: 100vh; 
-      width:100%;    
-    padding-left: 12vh;
-     }
+        .sps img {
+          height: 100px;
+        }
+      }
 
-    .upcoming_events h2{
-    font-size: 12vh;
-    font-weight: 600;
-    margin-top: 0;
-    white-space: nowrap;
-    padding: 35vh 4vh 0 0;
-    }
+      .upcoming_events h2 {
+        color: #fff;
+      }
 
-    #upcoming_events_img{
-      padding-top:20vh; 
-      margin:auto;
-      position: absolute;
-      right: 2vw;
-    }
-    
-.upcoming_events a{
- /* height:9vh; 
+      .upcoming_events {
+        background-image: url("./public/taylor-van-riper-yQorCngxzwI-unsplash.jpg");
+        background-position: 50% 55%;
+      }
+
+      @media only screen and (min-width:600px) {
+        .upcoming_events {
+          height: 100vh;
+          width: 100%;
+          padding-left: 12vh;
+        }
+
+        .upcoming_events h2 {
+          font-size: 12vh;
+          font-weight: 600;
+          margin-top: 0;
+          white-space: nowrap;
+          padding: 35vh 4vh 0 0;
+        }
+
+        #upcoming_events_img {
+          padding-top: 20vh;
+          margin: auto;
+          position: absolute;
+          right: 2vw;
+        }
+
+        .upcoming_events a {
+          /* height:9vh; 
  width: 25vh;  */
- border:2px solid #fff; 
- background-color: #0003; 
- font-weight: 600; 
- color: #fff;
-      height: auto !important;
-      line-height: 100%;
-      padding: 15px 40px !important;
-}
+          border: 2px solid #fff;
+          background-color: #0003;
+          font-weight: 600;
+          color: #fff;
+          height: auto !important;
+          line-height: 100%;
+          padding: 15px 40px !important;
+        }
 
-  .upcoming_events a:hover {
-        color: #000;
-        background-color:#fff;
+        .upcoming_events a:hover {
+          color: #000;
+          background-color: #fff;
+        }
+
+        .upcoming_events .inner_events {
+          display: flex;
+          position: relative;
+        }
+
       }
-  .upcoming_events .inner_events{
-    display: flex;
-    position: relative;
-  }
 
-  }
+      @media only screen and (max-width:600px) {
+        .upcoming_events {
+          height: 100vh;
+          width: 100%;
+          text-align: center;
+        }
 
-  @media only screen and (max-width:600px){
-    .upcoming_events{
-      height: 100vh;
-      width: 100%;
-      text-align: center;
-    }
-
-    .upcoming_events h2{
-      width: 100%;
-      text-align: center;
-      font-size: 2.5rem;
-      font-weight: 600;
-      white-space: nowrap;
-      position: absolute;
-      margin: 0;
-      top: 50vh;
-    }
+        .upcoming_events h2 {
+          width: 100%;
+          text-align: center;
+          font-size: 2.5rem;
+          font-weight: 600;
+          white-space: nowrap;
+          position: absolute;
+          margin: 0;
+          top: 50vh;
+        }
 
 
-    .upcoming_events a{ 
-      border:2px solid #fff; 
-      background-color: #0003; 
-      font-weight: 600; 
-      color: #fff; 
-      margin-top: 62vh;
-      height: auto !important;
-      line-height: 100%;
-      padding: 10px 30px !important;
-      font-size: 12px;
-  }
+        .upcoming_events a {
+          border: 2px solid #fff;
+          background-color: #0003;
+          font-weight: 600;
+          color: #fff;
+          margin-top: 62vh;
+          height: auto !important;
+          line-height: 100%;
+          padding: 10px 30px !important;
+          font-size: 12px;
+        }
 
-  .upcoming_events a:hover {
-        color: #000;
-        background-color:#fff;
+        .upcoming_events a:hover {
+          color: #000;
+          background-color: #fff;
+        }
       }
-  }
 
-    #parallax{
-      position: relative;
-    }
-
-    #parallax video{
-      object-fit: cover;
-      width: 100vw;
-      height: 100vh;
-      position: absolute;
-    }
-
-    @media only screen and (max-width:600px){
-      #parallax{
-        height: 100vh !important;
+      #parallax {
+        position: relative;
       }
-      #parallax h2 {
-        width: 100%;
-        text-align: center;
-        font-size: 8vw;
+
+      #parallax video {
+        object-fit: cover;
+        width: 100vw;
+        height: 100vh;
         position: absolute;
-        top: 45vh;
       }
 
-      #parallax .systembutton{
-        width: 100%;
-        text-align: center;
+      @media only screen and (max-width:600px) {
+        #parallax {
+          height: 100vh !important;
+        }
 
+        #parallax h2 {
+          width: 100%;
+          text-align: center;
+          font-size: 8vw;
+          position: absolute;
+          top: 45vh;
+        }
+
+        #parallax .systembutton {
+          width: 100%;
+          text-align: center;
+
+        }
+
+        #parallax a {
+          margin-top: 61vh;
+          border: 2px solid white;
+          background-color: #0008;
+          font-weight: 600;
+          color: white;
+          height: auto !important;
+          line-height: 100%;
+          padding: 10px 30px !important;
+          font-size: 12px;
+        }
+
+        #parallax a:hover {
+          color: #555;
+          background-color: #fff;
+        }
       }
 
-      #parallax a {
-        margin-top: 61vh;
-        border:2px solid white; 
-        background-color: #0008; 
-        font-weight: 600; 
+      @media only screen and (min-width:600px) {
+        #parallax {
+          height: 100vh !important;
+        }
+
+
+        #parallax .systemcontent {
+          position: absolute;
+          text-align: left;
+          padding: 6rem 0 0 5rem;
+        }
+
+        #parallax a {
+          /* height:9vh; 
+      width: 25vh;  */
+          border: 2px solid white;
+          background-color: #0008;
+          font-weight: 600;
+          color: white;
+          height: auto !important;
+          line-height: 100%;
+          padding: 15px 40px !important;
+        }
+
+        #parallax a:hover {
+          color: #555;
+          background-color: #fff;
+        }
+
+        #parallax h2 {
+          font-size: 12vh;
+          padding-top: 36%;
+        }
+      }
+
+      .Achievements {
+        position: relative;
+        background-image: url("./public/david-maunsell-gvhx3qnWWGw-unsplash.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+      }
+
+      .Achievements h4 {
         color: white;
-      height: auto !important;
-      line-height: 100%;
-      padding: 10px 30px !important;
-      font-size: 12px;
       }
-      #parallax a:hover {
+
+      .Achievements a:hover {
         color: #555;
-        background-color:#fff;
+        background-color: #fff;
       }
-    }
 
-    @media only screen and (min-width:600px) {
-      #parallax{
-        height: 100vh !important;
+      @media only screen and (max-width: 600px) {
+        .Achievements {
+          text-align: center;
+          height: 100vh;
+        }
+
+
+        .Achievements a {
+          border: 2px solid white;
+          background-color: #0008;
+          font-weight: 600;
+          color: white;
+          top: 64vh;
+          height: auto !important;
+          line-height: 100%;
+          padding: 10px 30px !important;
+          font-size: 12px;
+        }
+
+        .Achievements .achdiv {
+          width: 100%;
+          text-align: center;
+          display: inline-block;
+        }
+
+        .Achievements h4 {
+          position: absolute;
+          text-align: center;
+          width: 100%;
+          font-size: 8vw;
+          font-weight: 600;
+          top: 50vh;
+          text-shadow: 0 0 7px #0008;
+        }
+
+        .Achievements a:hover {
+          color: #555;
+          background-color: #fff;
+        }
       }
-      
-      
-    #parallax .systemcontent{
-      position: absolute;
-      text-align: left; 
-      padding: 6rem 0 0 5rem;
-    }
 
-      #parallax a{
-      /* height:9vh; 
+      @media only screen and (min-width: 600px) {
+        .Achievements {
+          height: 100vh;
+          text-align: left;
+          padding: 3rem 0 0 5rem;
+        }
+
+        .Achievements h4 {
+          font-size: 12vh;
+          font-weight: 600;
+          margin-top: 0;
+          padding: 27vh 4vh 0 0;
+          text-shadow: 0 0 7px #0008;
+        }
+
+        .Achievements a {
+          /* height:9vh; 
       width: 25vh;  */
-      border:2px solid white; 
-      background-color: #0008; 
-      font-weight: 600; 
-      color: white;
-      height: auto !important;
-      line-height: 100%;
-      padding: 15px 40px !important;
+          border: 2px solid white;
+          background-color: #0008;
+          font-weight: 600;
+          color: white;
+          height: auto !important;
+          line-height: 100%;
+          padding: 15px 40px !important;
+        }
       }
-      
-      #parallax a:hover {
-        color: #555;
-        background-color:#fff;
+
+      #stage {
+        width: 100%;
+        height: 100%;
+
       }
-      #parallax h2 {
-        font-size: 12vh;
-        padding-top: 36%;
+
+      @media only screen and (min-width: 600px) {
+        #stage img {
+          width: 100%;
+          height: 100vh;
+        }
+
+        #stage {
+          height: 100vh;
+          width: 100%;
+        }
       }
-    }
 
- .Achievements{
-  position: relative;
-  background-image: url("./public/david-maunsell-gvhx3qnWWGw-unsplash.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
- }
+      @media only screen and (max-width: 600px) {
+        #stage img {
+          width: 100%;
+          height: 50vw;
+        }
 
- .Achievements h4{
-   color: white;
- }
- 
-.Achievements a:hover {
-  color: #555;
-  background-color:#fff;
-}
- @media only screen and (max-width: 600px){
-   .Achievements{
-      text-align: center; 
-      height: 100vh;
-   }
+        #stage {
+          height: 50vw;
+          width: 100%;
+        }
+      }
 
+      .nav-links a {
+        font-family: 'Nunito Sans', sans-serif !important;
+        /* text-shadow: 0 0 10px #000b; */
+        font-size: 15px !important;
+        padding: 22px 0 10px 0 !important;
+        margin: 0 15px !important;
+        line-height: 100%;
+        text-transform: uppercase;
+      }
 
-.Achievements a{
-   border:2px solid white; 
-   background-color: #0008; 
-   font-weight: 600; 
-   color: white;
-   top: 64vh;
-      height: auto !important;
-      line-height: 100%;
-      padding: 10px 30px !important;
-      font-size: 12px;
- }
+      .nav-wrapper a:hover {
+        background-color: transparent !important;
+      }
 
- .Achievements .achdiv{
-   width: 100%;
-   text-align: center;
-   display: inline-block;
- }
+      .un::after {
+        content: '';
+        width: 0px;
+        height: 1.5px;
+        display: block;
+        background: #fff;
+        margin-top: 4px;
+        transition: 300ms;
+      }
 
-   .Achievements h4{
-     position: absolute;
-     text-align: center;
-     width: 100%;
-     font-size:8vw;
-     font-weight: 600;
-     top: 50vh;
-     text-shadow: 0 0 7px #0008;
-   }
+      .un:hover::after {
+        width: 100%;
+      }
+    </style>
 
-.Achievements a:hover {
-  color: #555;
-  background-color:#fff;
-}
- }
+    <style>
+      .fadein {
+        position: relative;
+        height: 100vh;
+        width: 100vw;
+      }
 
- @media only screen and (min-width: 600px){
-   .Achievements{
-      height: 100vh;
-      text-align: left;
-      padding: 3rem 0 0 5rem;
-   }
+      .fadein img {
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+    </style>
 
-   .Achievements h4{
-     font-size:12vh;
-     font-weight: 600;
-     margin-top: 0;
-     padding: 27vh 4vh 0 0;
-     text-shadow: 0 0 7px #0008;
-   }
-
-   .Achievements a{
-      /* height:9vh; 
-      width: 25vh;  */
-      border:2px solid white; 
-      background-color: #0008; 
-      font-weight: 600; 
-      color: white;
-      height: auto !important;
-      line-height: 100%;
-      padding: 15px 40px !important;
-    }
-   }
-
- #stage {
-      width: 100%;
-      height: 100%;
-            
-    }
-
- @media only screen and (min-width: 600px){
-    #stage img{
-      width: 100%;
-      height: 100vh;
-    }
-    
-    #stage {
-      height: 100vh;
-      width: 100%;
-    }
- }
-
-  @media only screen and (max-width: 600px){
-    #stage img{
-      width: 100%;
-      height: 50vw;
-    }
-
-    #stage{
-      height: 50vw;
-      width: 100%;
-    }
-  }
-
-  .nav-links a {
-    font-family: 'Nunito Sans', sans-serif !important;
-    /* text-shadow: 0 0 10px #000b; */
-    font-size: 15px !important;
-    padding: 22px 0 10px 0 !important;
-    margin: 0 15px !important;
-    line-height: 100%;
-    text-transform: uppercase;
-  }
-  .nav-wrapper a:hover {
-    background-color: transparent !important;
-  }
-
-.un::after {
-  content: '';
-  width: 0px;
-  height: 1.5px;
-  display: block;
-  background: #fff;
-  margin-top: 4px;
-  transition: 300ms;
-}
-
-.un:hover::after {
-  width: 100%;
-}
-    
-</style>
-
-<style>
-.fadein { position:relative; height:100vh; width:100vw; }
-.fadein img { position:absolute; left:0; top:0; }
-</style>
-
-<style>
-    .section{
+    <style>
+      .section {
         padding: 0;
-    }
-</style>
+      }
+    </style>
 
-<script>
-  $(function(){
-    $('.fadein img:gt(0)').hide();
-    setInterval(function(){$('.fadein :first-child').fadeOut().next('img').fadeIn().end().appendTo('.fadein');}, 6000);
-});
+    <script>
+      $(function () {
+        $('.fadein img:gt(0)').hide();
+        setInterval(function () { $('.fadein :first-child').fadeOut().next('img').fadeIn().end().appendTo('.fadein'); }, 6000);
+      });
 
-$(window).bind("load", function() {  
-	$('#parallax video').load('index.html');
-}); 
-</script>
-  
-<div class="main-wrapper">
-  <div class="menu-holder" style="width:100%" id="menu">
-    <nav  class="transparent"  style="height: 4rem; box-shadow: none; background-color: #0004 !important;"> 
-        <!-- navbar content here  --> 
-        <div class="nav-wrapper">
+      $(window).bind("load", function () {
+        $('#parallax video').load('index.html');
+      }); 
+    </script>
+
+    <div class="main-wrapper">
+      <div class="menu-holder" style="width:100%" id="menu">
+        <nav class="transparent" style="height: 4rem; box-shadow: none; background-color: #0004 !important;">
+          <!-- navbar content here  -->
+          <div class="nav-wrapper">
             <ul class="left">
-              <li><a href="#" class=" sidenav-trigger" data-target="slide_out" style="padding-top: 0rem;"><i class="material-icons" style="font-size:1.5rem;  color: white;">menu</i></a></li>
+              <li><a href="#" class=" sidenav-trigger" data-target="slide_out" style="padding-top: 0rem;"><i
+                    class="material-icons" style="font-size:1.5rem;  color: white;">menu</i></a></li>
             </ul>
             <ul>
-              <li style="height: 5rem; width: 5rem;"><a href="index.html" style="height: 5rem; width: 7rem; transform: translate(0, 0.5rem);"><img src="./public/whitelogo3.png" alt="" style="margin-left: 0; height: 3rem;"></a></li>
+              <li style="height: 5rem; width: 5rem;"><a href="index.html"
+                  style="height: 5rem; width: 7rem; transform: translate(0, 0.5rem);"><img src="./public/whitelogo3.png"
+                    alt="" style="margin-left: 0; height: 3rem;"></a></li>
             </ul>
             <ul class="hide-on-med-and-down right nav-links" style="padding-right: 12rem;">
-              <li><a href="solution.html" class="un">Solutions</a></li>
-              <li><a href="hangar.html" class="un">Hangar</a></li>
-              <li><a href="upcoming-projects.html" class="un">Upcoming Projects</a></li>
+              <li><a href="curr-members.html" class="un">Team</a></li>
+              <li><a href="about.html" class="un">About Us</a></li>
+              <li><a href="achievements.html" class="un">Achievements</a></li>
               <li><a href="contact.html" class="un">Contact Us</a></li>
             </ul>
-        </div>
-    </nav>
-
-    <ul class="sidenav #000000 black" style="color:#eeeeee;" id="slide_out">
-      <!-- <li><a class="sidenav-close" href="#!"><i class="material-icons" style="font-size:2rem;">menu</i></a></li> -->
-      <li><a href="index.html" style="width:100%; height: 100%;"><img src="./public/whitelogo2.png" alt="" style="transform:scale(2); width:100%; height: 100%; margin-top: 36px;"></a></li>
-      <hr style="margin: 1rem 2.5rem 1rem 2rem;">
-      <li><a href="index.html" class="active hide-on-med-and-up"><i class="material-icons">home</i> Home</a></li>
-      <li><a href="about.html"><i class="material-icons">info</i> About Us</a></li>
-      <li><a href="hangar.html"><i class="material-icons">airplanemode_active</i> Hangar</a></li>
-      <li>
-        <ul class="collapsible" style="padding-left: 1rem;">
-        <li>
-          <div class="collapsible-header"><i class="material-icons" style="margin-right: 1.8rem;">group</i> <b>Team</b></div>
-          <div class="collapsible-body"> 
-            <ul  style="background: black; padding-left: 4rem;">
-                <li><a href="mentors.html">Mentors</a></li>
-                <li><a href="curr-members.html">Current Members</a></li>
-                <li><a href="past-members.html">Past Members</a></li>
-            </ul>
           </div>
-        </li>
-        </ul>
-      </li>
-      <li><a href="achievements.html"><i class="material-icons">emoji_events</i> Achievements</a></li>
-      <li><a href="upcoming_events.html" class="active"><i class="material-icons">home</i> Upcoming Events</a></li>
-      <li><a href="upcoming-projects.html" class="active"><i class="material-icons">precision_manufacturing</i> Upcoming Projects</a></li>
-      <li><a href="solution.html" class="active"><i class="material-icons">settings</i> Solutions</a></li>
-      <li><a href="contact.html"><i class="material-icons">email</i> Contact Us</a></li>
-    </ul>
-  </div>  
+        </nav>
 
-    <div id="fullpage">
-        <div class="section active fp-auto-height" style="height:100vh;">
-            <div class="fadein" id="stage">
-              <img src="./public/tarrot.jpg" alt="">
-              <img src="./public/castor.jpg" alt="">
-              <img src="./public/DSC_0515.JPG" alt="">
-            </div>     
-        </div>
-        <div class="section fp-auto-height" style="height:100vh;">        
-            <div class="Achievements">
-                <h4>Achievements</h4>
-                <div class="achdiv">
-                <a class="waves-effect waves-light btn-large" href="achievements.html">LEARN MORE</a>
+        <ul class="sidenav #000000 black" style="color:#eeeeee;" id="slide_out">
+          <!-- <li><a class="sidenav-close" href="#!"><i class="material-icons" style="font-size:2rem;">menu</i></a></li> -->
+          <li><a href="index.html" style="width:100%; height: 100%;"><img src="./public/whitelogo2.png" alt=""
+                style="transform:scale(2); width:100%; height: 100%; margin-top: 36px;"></a></li>
+          <hr style="margin: 1rem 2.5rem 1rem 2rem;">
+          <li><a href="index.html" class="active hide-on-med-and-up"><i class="material-icons">home</i> Home</a></li>
+          <li><a href="about.html"><i class="material-icons">info</i> About Us</a></li>
+          <li><a href="hangar.html"><i class="material-icons">airplanemode_active</i> Hangar</a></li>
+          <li>
+            <ul class="collapsible" style="padding-left: 1rem;">
+              <li>
+                <div class="collapsible-header"><i class="material-icons" style="margin-right: 1.8rem;">group</i>
+                  <b>Team</b>
                 </div>
-            </div>
+                <div class="collapsible-body">
+                  <ul style="background: black; padding-left: 4rem;">
+                    <li><a href="mentors.html">Mentors</a></li>
+                    <li><a href="curr-members.html">Current Members</a></li>
+                    <li><a href="past-members.html">Past Members</a></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li><a href="achievements.html"><i class="material-icons">emoji_events</i> Achievements</a></li>
+          <li><a href="upcoming_events.html" class="active"><i class="material-icons">home</i> Upcoming Events</a></li>
+          <li><a href="upcoming-projects.html" class="active"><i class="material-icons">precision_manufacturing</i>
+              Upcoming Projects</a></li>
+          <li><a href="solution.html" class="active"><i class="material-icons">settings</i> Solutions</a></li>
+          <li><a href="contact.html"><i class="material-icons">email</i> Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div id="fullpage">
+        <div class="section active fp-auto-height" style="height:100vh;">
+          <div class="fadein" id="stage">
+            <img src="./public/Tar.png" alt="">"
+            <img src="./public/tarrot.jpg" alt="">
+            <img src="./public/DSC_0515.JPG" alt="">
+          </div>
         </div>
         <div class="section fp-auto-height" style="height:100vh;">
-            <div id="parallax">
-              <video loop data-autoplay muted width="100%" height="100%">
-                <source src="public/swarm.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-              <div class="systemcontent">
+          <div class="Achievements">
+            <h4>Achievements</h4>
+            <div class="achdiv">
+              <a class="waves-effect waves-light btn-large" href="achievements.html">LEARN MORE</a>
+            </div>
+          </div>
+        </div>
+        <div class="section fp-auto-height" style="height:100vh;">
+          <div id="parallax">
+            <video loop data-autoplay muted width="100%" height="100%">
+              <source src="public/swarm.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <div class="systemcontent">
               <h2>Systems</h2>
               <div class="systembutton">
-              <a class="waves-effect waves-light btn-large" href="hangar.html">FLY IN</a>
-              </div>
+                <a class="waves-effect waves-light btn-large" href="hangar.html">FLY IN</a>
               </div>
             </div>
+          </div>
         </div>
         <div class="section fp-auto-height" style="height:100vh;">
-            <div class="upcoming_events">
-                <div class="inner_events">
-                  <div>
-                    <h2>Upcoming Events</h2>
-                    <a class="waves-effect waves-light btn-large" href="upcoming_events.html">DISCOVER</a>
-                  </div>
-                  <div class="hide-on-med-and-down" id="upcoming_events_img">
-                    <img style="height: 60vh;" src="./public/website logo  final.png" alt="..." loading="lazy">
-                  </div>
-                </div>
+          <div class="upcoming_events">
+            <div class="inner_events">
+              <div>
+                <h2>Upcoming Events</h2>
+                <a class="waves-effect waves-light btn-large" href="upcoming_events.html">DISCOVER</a>
               </div>
+              <div class="hide-on-med-and-down" id="upcoming_events_img">
+                <img style="height: 60vh;" src="./public/website logo  final.png" alt="..." loading="lazy">
+              </div>
+            </div>
+          </div>
         </div>
         <div class="section" style="background-image: url(public/light-texture.jpg); background-size: cover;">
           <div class="sps" style="text-align: center; padding-top: 2rem; padding-bottom: 5rem;">
@@ -674,6 +704,7 @@ $(window).bind("load", function() {
               <a href=""><img src="./public/DTU.png" alt="..." loading="lazy"></a>
               <a href=""><img src="./public/reliance-industries-logo.png" alt="..." loading="lazy"></a>
               <a href=""><img src="./public/adani2.png" alt="..." loading="lazy"></a>
+              <a href=""><img src="./public/logo-blickfeld.png" alt="..." loading="lazy"></a>
               <a href=""><img src="./public/ongc2.png" alt="..." loading="lazy"></a>
               <a href=""><img src="./public/lockheed-martin.png" alt="..." loading="lazy"></a>
               <a href=""><img src="./public/solidworks_logo.png" alt="..." loading="lazy"></a>
@@ -681,7 +712,9 @@ $(window).bind("load", function() {
               <a href=""><img src="./public/SimScale_logo.png" alt="..." loading="lazy"></a>
               <a href=""><img src="./public/Loctite-Logo.png" alt="..." loading="lazy"></a>
               <a href=""><img src="./public/matlab_logo.png" alt="..." loading="lazy"></a>
-              <a href=""><img src="./public/logo-blickfeld.png" alt="..." loading="lazy"></a>
+              <a href=""><img src="./public/echomav.png" alt="..." loading="lazy"></a>
+              <a href=""><img src="./public/henckel.png" alt="..." loading="lazy"></a>
+
             </div>
           </div>
         </div>
@@ -689,67 +722,67 @@ $(window).bind("load", function() {
 
           <div id="contact" style="padding: 0 4rem 0 4rem; background:black; position: relative;">
             <div class="row">
-                <div class="col l3 m12 s12">
-                    <h4 style="white-space: nowrap;">UAS-DTU</h4>
-                    <p class="text">A team of enthusiastic undergraduates, working to providing the solutions for
-                        urban
-                        surveillance needs. </p>
-                    <div class="logos">
-                        <a href="https://www.facebook.com/uas.dtu/" target="blank"><i
-                                class="fab fa-facebook-square fa-2x"></i></a>
-                        <a href="https://in.linkedin.com/company/uas-dtu" target="blank"><i
-                                class="fab fa-linkedin fa-2x"></i></i></a>
-                        <a href="https://www.youtube.com/channel/UCmOV4uiBHoHzf5ZrE1z6WQg" target="blank"><i
-                                class="fab fa-youtube fa-2x"></i></a>
-                        <a href="https://www.instagram.com/uas_dtu/" target="blank"><i
-                                class="fab fa-instagram fa-2x"></i></i></a>
-                    </div>
+              <div class="col l3 m12 s12">
+                <h4 style="white-space: nowrap;">UAS-DTU</h4>
+                <p class="text">A team of enthusiastic undergraduates, working to providing the solutions for
+                  urban
+                  surveillance needs. </p>
+                <div class="logos">
+                  <a href="https://www.facebook.com/uas.dtu/" target="blank"><i
+                      class="fab fa-facebook-square fa-2x"></i></a>
+                  <a href="https://in.linkedin.com/company/uas-dtu" target="blank"><i
+                      class="fab fa-linkedin fa-2x"></i></i></a>
+                  <a href="https://www.youtube.com/channel/UCmOV4uiBHoHzf5ZrE1z6WQg" target="blank"><i
+                      class="fab fa-youtube fa-2x"></i></a>
+                  <a href="https://www.instagram.com/uas_dtu/" target="blank"><i
+                      class="fab fa-instagram fa-2x"></i></i></a>
+                </div>
+              </div>
+
+              <div class="col l6 m12 s12" id="g_map">
+                <h4 class="map">Map help:</h4>
+                <div style="overflow: hidden;">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3498.027403024808!2d77.11499645105123!3d28.748598782285452!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d01270184b37d%3A0x31d84edc5468f356!2sUAS+DTU!5e0!3m2!1sen!2sin!4v1516991611933"
+                    frameborder="0" style="border:0; width:50rem;height:15rem;"></iframe>
                 </div>
 
-                <div class="col l6 m12 s12" id="g_map">
-                    <h4 class="map">Map help:</h4>
-                    <div style="overflow: hidden;">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3498.027403024808!2d77.11499645105123!3d28.748598782285452!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d01270184b37d%3A0x31d84edc5468f356!2sUAS+DTU!5e0!3m2!1sen!2sin!4v1516991611933"
-                            frameborder="0" style="border:0; width:50rem;height:15rem;"></iframe>
-                    </div>
+              </div>
 
-                </div>
+              <div class="col l3 m12 s12">
+                <h4>Reach us at:</h4>
+                <p class="text">LW2FF1, Delhi Technological University, Delhi - 110042</p>
+                <p id="phone1"><i class="fas fa-phone-alt"></i> +91-84484 60692</p>
+                <p><i class="fas fa-phone-alt"></i> +91-78383 72964</p>
+                <p><i class="fas fa-phone-alt"></i> +91-83838 43931 </p>
+                <p><i class="fas fa-envelope"></i> uasdtu@dtu.ac.in</p>
+                <p>&copy; 2025 UAS-DTU. All rights reserved.</p>
 
-                <div class="col l3 m12 s12">
-                  <h4>Reach us at:</h4>
-                  <p class="text">LW2FF1, Delhi Technological University, Delhi - 110042</p>
-                  <p id="phone1"><i class="fas fa-phone-alt"></i> +91-84484 60692</p>
-                  <p><i class="fas fa-phone-alt"></i> +91-78383 72964</p>
-                  <p><i class="fas fa-phone-alt"></i> +91-83838 43931 </p>
-                  <p><i class="fas fa-envelope"></i> uasdtu@dtu.ac.in</p>
-                  <p>&copy; 2025 UAS-DTU. All rights reserved.</p>
-      
-                </div>
-                
+              </div>
+
             </div>
-        </div>
+          </div>
 
-                </div>
         </div>
+      </div>
     </div>
 
-<style>
-  #fp-nav ul li a span{
-    background: white;
-  }
-</style>    
-    
-<script>
-    new fullpage('#fullpage', {
-	//options here
-	autoScrolling:true,
-  dragAndMove:true,
-  slidesNavigation:true,
-  responsiveSlides:true,
-  navigation:true,
-    });
+    <style>
+      #fp-nav ul li a span {
+        background: white;
+      }
+    </style>
 
-//methods
-fullpage_api.setAllowScrolling(true);
-</script>
+    <script>
+      new fullpage('#fullpage', {
+        //options here
+        autoScrolling: true,
+        dragAndMove: true,
+        slidesNavigation: true,
+        responsiveSlides: true,
+        navigation: true,
+      });
+
+      //methods
+      fullpage_api.setAllowScrolling(true);
+    </script>

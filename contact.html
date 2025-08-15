@@ -1,7 +1,7 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
+
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home • UAS-DTU</title>
@@ -12,8 +12,8 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Crete+Round:ital@1&display=swap" rel="stylesheet"> 
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@700&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Crete+Round:ital@1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Saira+Semi+Condensed:wght@500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Crete+Round&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&display=swap" rel="stylesheet">
@@ -23,298 +23,313 @@
     <link href="public/aos-master/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="public/fullPage.js-master/dist/fullpage.css">
     <script src="public/fullPage.js-master/dist/fullpage.js"></script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FKKZ2KYGD0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FKKZ2KYGD0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
 
-  gtag('config', 'G-FKKZ2KYGD0');
-</script>
-</head>
+      gtag('config', 'G-FKKZ2KYGD0');
+    </script>
+  </head>
 
-<body>
-  
-<style>
-  .loader{
-    position:fixed;
-    top:0;
-    left:0;
-    z-index: 99;
-    width:100%;
-    height: 100%;
-    background-color: #ebebeb;
-    text-align: center;
-  }
+  <body>
 
-#fp-nav{
-  z-index: 80 !important;
-}
+    <style>
+      .loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 99;
+        width: 100%;
+        height: 100%;
+        background-color: #ebebeb;
+        text-align: center;
+      }
+
+      #fp-nav {
+        z-index: 80 !important;
+      }
 
 
-@media only screen and (min-width: 600px){
-.loader>img{
-    width: 30vw;
-    margin-top: 25vh;
-    margin-right: 7vw;
-  }
-}
+      @media only screen and (min-width: 600px) {
+        .loader>img {
+          width: 30vw;
+          margin-top: 25vh;
+          margin-right: 7vw;
+        }
+      }
 
-@media only screen and (max-width: 600px){
-.loader>img{
-    width: 60vw;
-    margin-top: 25vh;
-    margin-right: 7vw;
-  }
-}
+      @media only screen and (max-width: 600px) {
+        .loader>img {
+          width: 60vw;
+          margin-top: 25vh;
+          margin-right: 7vw;
+        }
+      }
 
-.hidden{
-animation:fadeOut 1s;
-animation-fill-mode: forwards;
-}
+      .hidden {
+        animation: fadeOut 1s;
+        animation-fill-mode: forwards;
+      }
 
-@keyframes fadeOut{
-100%{
-  opacity:0;
-  visibility: hidden;
-}
-}
-
-</style>
-<div class="loader">
-  <img src="./public/l.png" alt="">
-  <div class="preloader-wrapper active" style="display: block; margin:2vh auto;">
-    <div class="spinner-layer spinner-blue-only">
-      <div class="circle-clipper left">
-        <div class="circle"></div>
-      </div><div class="gap-patch">
-        <div class="circle"></div>
-      </div><div class="circle-clipper right">
-        <div class="circle"></div>
+      @keyframes fadeOut {
+        100% {
+          opacity: 0;
+          visibility: hidden;
+        }
+      }
+    </style>
+    <div class="loader">
+      <img src="./public/l.png" alt="">
+      <div class="preloader-wrapper active" style="display: block; margin:2vh auto;">
+        <div class="spinner-layer spinner-blue-only">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div>
+          <div class="gap-patch">
+            <div class="circle"></div>
+          </div>
+          <div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
 
-<script>
-  window.addEventListener("load",function(){
-    const loader = document.querySelector(".loader");
+    <script>
+      window.addEventListener("load", function () {
+        const loader = document.querySelector(".loader");
 
-    loader.className += " hidden";
-  });
-</script>
-
-
-
-  <script>    
-    document.addEventListener('DOMContentLoaded', function() {
-        var elems = document.querySelectorAll('.sidenav');
-        var instances = M.Sidenav.init(elems,{});
+        loader.className += " hidden";
       });
-    
-    $(document).ready(function(){
-      $('.collapsible').collapsible();
-    });
-  </script>
-  
-  <style>
-    body {
-      font-family: 'Nunito Sans', sans-serif !important; /* common font */
-    }
-    .main-wrapper{
-      position: relative;
-    }
+    </script>
 
-    .menu-holder{
-      position: fixed;
-      z-index: 50;
-    } 
 
-    .sidenav-overlay{
-      z-index: 0;
-    }
 
-    nav {
-      color: white;
-    }
-    @media only screen and (min-width: 993px){
-      nav a.sidenav-trigger {
-      display: block;
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var elems = document.querySelectorAll('.sidenav');
+        var instances = M.Sidenav.init(elems, {});
+      });
+
+      $(document).ready(function () {
+        $('.collapsible').collapsible();
+      });
+    </script>
+
+    <style>
+      body {
+        font-family: 'Nunito Sans', sans-serif !important;
+        /* common font */
       }
-    }
-    
-    .sidenav {
-      line-height: 1rem;
-    }
 
-    .sidenav li>a{
+      .main-wrapper {
+        position: relative;
+      }
+
+      .menu-holder {
+        position: fixed;
+        z-index: 50;
+      }
+
+      .sidenav-overlay {
+        z-index: 0;
+      }
+
+      nav {
         color: white;
-    }
+      }
 
-    .sidenav li>a>i.material-icons{
-      color: white;
-    }
+      @media only screen and (min-width: 993px) {
+        nav a.sidenav-trigger {
+          display: block;
+        }
+      }
+
+      .sidenav {
+        line-height: 1rem;
+      }
+
+      .sidenav li>a {
+        color: white;
+      }
+
+      .sidenav li>a>i.material-icons {
+        color: white;
+      }
 
 
-    ::-webkit-scrollbar {
-    display: none;
-  }
+      ::-webkit-scrollbar {
+        display: none;
+      }
 
-  /* Track */
-  ::-webkit-scrollbar-track {
-   display: none;
-  }
+      /* Track */
+      ::-webkit-scrollbar-track {
+        display: none;
+      }
 
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-       display: none;
-  }
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        display: none;
+      }
 
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    display: none;
-  }
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+        display: none;
+      }
 
-.nav-links a {
-  font-family: 'Nunito Sans', sans-serif !important;
-  /* text-shadow: 0 0 10px #000b; */
-  font-size: 15px !important;
-  padding: 22px 0 10px 0 !important;
-  margin: 0 15px !important;
-  line-height: 100%;
-  text-transform: uppercase;
-}
-.nav-wrapper a:hover {
-  background-color: transparent !important;
-}
+      .nav-links a {
+        font-family: 'Nunito Sans', sans-serif !important;
+        /* text-shadow: 0 0 10px #000b; */
+        font-size: 15px !important;
+        padding: 22px 0 10px 0 !important;
+        margin: 0 15px !important;
+        line-height: 100%;
+        text-transform: uppercase;
+      }
 
-.un::after {
-content: '';
-width: 0px;
-height: 1.5px;
-display: block;
-background: #fff;
-margin-top: 4px;
-transition: 300ms;
-}
+      .nav-wrapper a:hover {
+        background-color: transparent !important;
+      }
 
-.un:hover::after {
-width: 100%;
-}
-  
-  </style>
-  
-  <div class="main-wrapper">
-    <div class="menu-holder" style="width:100%" id="menu">
-      <nav  class="transparent"  style="height: 4rem; box-shadow: none; background-color: #000 !important;"> 
-          <!-- navbar content here  --> 
+      .un::after {
+        content: '';
+        width: 0px;
+        height: 1.5px;
+        display: block;
+        background: #fff;
+        margin-top: 4px;
+        transition: 300ms;
+      }
+
+      .un:hover::after {
+        width: 100%;
+      }
+    </style>
+
+    <div class="main-wrapper">
+      <div class="menu-holder" style="width:100%" id="menu">
+        <nav class="transparent" style="height: 4rem; box-shadow: none; background-color: #000 !important;">
+          <!-- navbar content here  -->
           <div class="nav-wrapper">
-              <ul class="left">
-                <li><a href="#" class=" sidenav-trigger" data-target="slide_out" style="padding-top: 0rem;"><i class="material-icons" style="font-size:1.5rem;  color: white;">menu</i></a></li>
-              </ul>
-              <ul>
-                <li style="height: 5rem; width: 5rem;"><a href="index.html" style="height: 5rem; width: 7rem; transform: translate(0, 0.5rem);"><img src="./public/whitelogo3.png" alt="" style="margin-left: 0; height: 3rem;"></a></li>
-              </ul>
-              <ul class="hide-on-med-and-down right nav-links" style="padding-right: 12rem;">
-                <li><a href="solution.html" class="un">Solutions</a></li>
-                <li><a href="hangar.html" class="un">Hangar</a></li>
-                <li><a href="upcoming-projects.html" class="un">Upcoming Projects</a></li>
-                <li><a href="contact.html" class="un">Contact Us</a></li>
-              </ul>
+            <ul class="left">
+              <li><a href="#" class=" sidenav-trigger" data-target="slide_out" style="padding-top: 0rem;"><i
+                    class="material-icons" style="font-size:1.5rem;  color: white;">menu</i></a></li>
+            </ul>
+            <ul>
+              <li style="height: 5rem; width: 5rem;"><a href="index.html"
+                  style="height: 5rem; width: 7rem; transform: translate(0, 0.5rem);"><img src="./public/whitelogo3.png"
+                    alt="" style="margin-left: 0; height: 3rem;"></a></li>
+            </ul>
+            <ul class="hide-on-med-and-down right nav-links" style="padding-right: 12rem;">
+              <li><a href="curr-members.html" class="un">Team</a></li>
+              <li><a href="about.html" class="un">About Us</a></li>
+              <li><a href="achievements.html" class="un">Achievements</a></li>
+              <li><a href="contact.html" class="un">Contact Us</a></li>
+            </ul>
           </div>
-      </nav>
+        </nav>
 
-      <ul class="sidenav #000000 black" style="color:#eeeeee;" id="slide_out">
-        <!-- <li><a class="sidenav-close" href="#!"><i class="material-icons" style="font-size:2rem;">menu</i></a></li> -->
-        <li><a href="index.html" style="width:100%; height: 100%;"><img src="./public/whitelogo2.png" alt="" style="transform:scale(2); width:100%; height: 100%; margin-top: 36px;"></a></li>
-        <hr style="margin: 1rem 2.5rem 1rem 2rem;">
-        <li><a href="index.html" class="active hide-on-med-and-up"><i class="material-icons">home</i> Home</a></li>
-        <li><a href="about.html"><i class="material-icons">info</i> About Us</a></li>
-        <li><a href="hangar.html"><i class="material-icons">airplanemode_active</i> Hangar</a></li>
-        <li>
-          <ul class="collapsible" style="padding-left: 1rem;">
+        <ul class="sidenav #000000 black" style="color:#eeeeee;" id="slide_out">
+          <!-- <li><a class="sidenav-close" href="#!"><i class="material-icons" style="font-size:2rem;">menu</i></a></li> -->
+          <li><a href="index.html" style="width:100%; height: 100%;"><img src="./public/whitelogo2.png" alt=""
+                style="transform:scale(2); width:100%; height: 100%; margin-top: 36px;"></a></li>
+          <hr style="margin: 1rem 2.5rem 1rem 2rem;">
+          <li><a href="index.html" class="active hide-on-med-and-up"><i class="material-icons">home</i> Home</a></li>
+          <li><a href="about.html"><i class="material-icons">info</i> About Us</a></li>
+          <li><a href="hangar.html"><i class="material-icons">airplanemode_active</i> Hangar</a></li>
           <li>
-            <div class="collapsible-header"><i class="material-icons" style="margin-right: 1.8rem;">group</i> <b>Team</b></div>
-            <div class="collapsible-body"> 
-              <ul  style="background: black; padding-left: 4rem;">
-                  <li><a href="mentors.html">Mentors</a></li>
-                  <li><a href="curr-members.html">Current Members</a></li>
-                  <li><a href="past-members.html">Past Members</a></li>
-              </ul>
-            </div>
+            <ul class="collapsible" style="padding-left: 1rem;">
+              <li>
+                <div class="collapsible-header"><i class="material-icons" style="margin-right: 1.8rem;">group</i>
+                  <b>Team</b></div>
+                <div class="collapsible-body">
+                  <ul style="background: black; padding-left: 4rem;">
+                    <li><a href="mentors.html">Mentors</a></li>
+                    <li><a href="curr-members.html">Current Members</a></li>
+                    <li><a href="past-members.html">Past Members</a></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
           </li>
-          </ul>
-        </li>
-        <li><a href="achievements.html"><i class="material-icons">emoji_events</i> Achievements</a></li>
-        <li><a href="upcoming_events.html" class="active"><i class="material-icons">home</i> Upcoming Events</a></li>
-        <li><a href="upcoming-projects.html" class="active"><i class="material-icons">precision_manufacturing</i> Upcoming Projects</a></li>
-        <li><a href="solution.html" class="active"><i class="material-icons">settings</i> Solutions</a></li>
-        <li><a href="contact.html"><i class="material-icons">email</i> Contact Us</a></li>
-      </ul>
-    </div>  
+          <li><a href="achievements.html"><i class="material-icons">emoji_events</i> Achievements</a></li>
+          <li><a href="upcoming_events.html" class="active"><i class="material-icons">home</i> Upcoming Events</a></li>
+          <li><a href="upcoming-projects.html" class="active"><i class="material-icons">precision_manufacturing</i>
+              Upcoming Projects</a></li>
+          <li><a href="solution.html" class="active"><i class="material-icons">settings</i> Solutions</a></li>
+          <li><a href="contact.html"><i class="material-icons">email</i> Contact Us</a></li>
+        </ul>
+      </div>
 
 
 
-<style>
-    nav.transparent {
-        position: fixed !important;
-        top: 0;
-        background-color: #000000 !important;
-    }
-    .text {
-        line-height: 200% !important;
-    }
+      <style>
+        nav.transparent {
+          position: fixed !important;
+          top: 0;
+          background-color: #000000 !important;
+        }
 
-    @media only screen and (max-width: 1000px){
-        .main h2 {
+        .text {
+          line-height: 200% !important;
+        }
+
+        @media only screen and (max-width: 1000px) {
+          .main h2 {
             font-size: 50px !important;
-        }
-        .middle {
-            border-width: 0 !important;
-        }
-    }
-</style>
+          }
 
-<div class="main" style="padding: 40px 0; background-color: #333;">
-    <h2 style="margin: 25vh 0 0 0; text-align: center; font: 500 80px 'Saira Semi Condensed'; color: #aaa;">CONTACT US</h2>
-    <p style="margin: 5vh 25vw 25vh 25vw; color: #ddd; font-size: 20px; text-align: center;">We are a team of enthusiastic undergraduates, working to providing the solutions for a better future.</p>
-    <div class="row" style="margin: 10vh 0;">
-        <div class="col l4 s12" style="text-align: center; padding: 0 40px;">
+          .middle {
+            border-width: 0 !important;
+          }
+        }
+      </style>
+
+      <div class="main" style="padding: 40px 0; background-color: #333;">
+        <h2 style="margin: 25vh 0 0 0; text-align: center; font: 500 80px 'Saira Semi Condensed'; color: #aaa;">CONTACT
+          US</h2>
+        <p style="margin: 5vh 25vw 25vh 25vw; color: #ddd; font-size: 20px; text-align: center;">We are a team of
+          enthusiastic undergraduates, working to providing the solutions for a better future.</p>
+        <div class="row" style="margin: 10vh 0;">
+          <div class="col l4 s12" style="text-align: center; padding: 0 40px;">
             <h3 style="color: orangered;">VISIT US</h3>
             <p style="color: #eee;" class="text">
-                LW2FF1, Delhi Technological University,<br>
-                Delhi - 110042
+              LW2FF1, Delhi Technological University,<br>
+              Delhi - 110042
             </p>
-        </div>
-        <div class="col l4 s12 middle" style="text-align: center; border-left: 2px solid #888; border-right: 2px solid #888;">
+          </div>
+          <div class="col l4 s12 middle"
+            style="text-align: center; border-left: 2px solid #888; border-right: 2px solid #888;">
             <h3 style="color: orangered;">CALL US</h3>
             <p style="color: #eee;" class="text">
-                +91-78383 72964<br>
-                +91-84484 60692<br>
-                +91-83838 43931
+              +91-78383 72964<br>
+              +91-84484 60692<br>
+              +91-83838 43931
             </p>
-        </div>
-        <div class="col l4 s12" style="text-align: center; padding: 0 40px;">
+          </div>
+          <div class="col l4 s12" style="text-align: center; padding: 0 40px;">
             <h3 style="color: orangered;">CONTACT US</h3>
             <p style="color: #eee;" class="text">
-                uasdtu@dtu.ac.in
+              uasdtu@dtu.ac.in
             </p>
+          </div>
         </div>
-    </div>
-</div>
+      </div>
 
-<script>
-    let main = document.querySelector('.main');
-    let nav = document.querySelector('.transparent');
+      <script>
+        let main = document.querySelector('.main');
+        let nav = document.querySelector('.transparent');
 
-    let shift = window.getComputedStyle(nav).getPropertyValue('height');
-    // console.log(shift);
-    main.style.marginTop = shift;
-    document.title = "Contact • UAS-DTU";
-</script>
+        let shift = window.getComputedStyle(nav).getPropertyValue('height');
+        // console.log(shift);
+        main.style.marginTop = shift;
+        document.title = "Contact • UAS-DTU";
+      </script>
 
-<!-- <section id="footer">
+      <!-- <section id="footer">
 <style>
     .logos a>i{
         padding-right: 0.4rem;
@@ -375,5 +390,6 @@ width: 100%;
     </div>
     </section>    
 </div>-->
-</body>
+  </body>
+
 </html>
