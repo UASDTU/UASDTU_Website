@@ -1,514 +1,337 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Home • UAS-DTU</title>
-        <link href="./public/favicon-32x32.png" rel="shortcut icon" type="image/png">
-        <link rel="stylesheet" href="public/materialize/css/materialize.css">
-        <script src="public/jquery.min.js"></script>
-        <script src="public/materialize/js/materialize.js"></script>
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Crete+Round:ital@1&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@700&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Saira+Semi+Condensed:wght@500&display=swap"
-            rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Crete+Round&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Tinos&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Karma:wght@300&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
-        <link href="public/aos-master/dist/aos.css" rel="stylesheet">
-        <link rel="stylesheet" href="public/fullPage.js-master/dist/fullpage.css">
-        <script src="public/fullPage.js-master/dist/fullpage.js"></script>
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-FKKZ2KYGD0"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag() { dataLayer.push(arguments); }
-            gtag('js', new Date());
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home • UAS-DTU</title>
 
-            gtag('config', 'G-FKKZ2KYGD0');
-        </script>
-    </head>
+    <link href="./public/favicon-32x32.png" rel="shortcut icon" type="image/png">
+    <link rel="stylesheet" href="public/materialize/css/materialize.css">
+    <script src="public/jquery.min.js"></script>
+    <script src="public/materialize/js/materialize.js"></script>
 
-    <body>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
 
-        <style>
-            .loader {
-                position: fixed;
-                top: 0;
-                left: 0;
-                z-index: 99;
-                width: 100%;
-                height: 100%;
-                background-color: #ebebeb;
-                text-align: center;
-            }
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@700&display=swap" rel="stylesheet">
+</head>
 
-            #fp-nav {
-                z-index: 80 !important;
-            }
+<body>
 
+<!-- ================= LOADER ================= -->
+<style>
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    width: 100%;
+    height: 100%;
+    background-color: #ebebeb;
+    text-align: center;
+}
+.hidden {
+    animation: fadeOut 1s forwards;
+}
+@keyframes fadeOut {
+    100% { opacity: 0; visibility: hidden; }
+}
+</style>
 
-            @media only screen and (min-width: 600px) {
-                .loader>img {
-                    width: 30vw;
-                    margin-top: 25vh;
-                    margin-right: 7vw;
-                }
-            }
+<div class="loader">
+    <img src="./public/l.png" alt="">
+    <div class="preloader-wrapper active" style="margin:2vh auto;">
+        <div class="spinner-layer spinner-blue-only">
+            <div class="circle-clipper left"><div class="circle"></div></div>
+            <div class="gap-patch"><div class="circle"></div></div>
+            <div class="circle-clipper right"><div class="circle"></div></div>
+        </div>
+    </div>
+</div>
 
-            @media only screen and (max-width: 600px) {
-                .loader>img {
-                    width: 60vw;
-                    margin-top: 25vh;
-                    margin-right: 7vw;
-                }
-            }
+<script>
+window.addEventListener("load", function () {
+    document.querySelector(".loader").classList.add("hidden");
+});
+</script>
 
-            .hidden {
-                animation: fadeOut 1s;
-                animation-fill-mode: forwards;
-            }
+<!-- ================= NAVBAR + SIDENAV ================= -->
+<style>
+body {
+    font-family: 'Nunito Sans', sans-serif !important;
+    background: black;
+    color: white;
+}
 
-            @keyframes fadeOut {
-                100% {
-                    opacity: 0;
-                    visibility: hidden;
-                }
-            }
-        </style>
-        <div class="loader">
-            <img src="./public/l.png" alt="">
-            <div class="preloader-wrapper active" style="display: block; margin:2vh auto;">
-                <div class="spinner-layer spinner-blue-only">
-                    <div class="circle-clipper left">
-                        <div class="circle"></div>
-                    </div>
-                    <div class="gap-patch">
-                        <div class="circle"></div>
-                    </div>
-                    <div class="circle-clipper right">
-                        <div class="circle"></div>
-                    </div>
-                </div>
+nav.transparent {
+    background-color: black !important;
+    position: fixed;
+    top: 0;
+}
+
+.nav-links a {
+    font-size: 15px !important;
+    margin: 0 15px;
+    text-transform: uppercase;
+}
+
+.un::after {
+    content: '';
+    width: 0;
+    height: 1.5px;
+    display: block;
+    background: #fff;
+    transition: 300ms;
+}
+.un:hover::after { width: 100%; }
+</style>
+
+<nav class="transparent">
+    <div class="nav-wrapper">
+        <ul class="left">
+            <li>
+                <a href="#" class="sidenav-trigger" data-target="slide_out">
+                    <i class="material-icons">menu</i>
+                </a>
+            </li>
+        </ul>
+
+        <ul>
+            <li>
+                <a href="index.html">
+                    <img src="./public/whitelogo3.png" style="height:3rem;">
+                </a>
+            </li>
+        </ul>
+
+        <ul class="right hide-on-med-and-down nav-links">
+            <li><a href="curr-members.html" class="un">Team</a></li>
+            <li><a href="about.html" class="un">About Us</a></li>
+            <li><a href="achievements.html" class="un">Achievements</a></li>
+            <li><a href="contact.html" class="un">Contact Us</a></li>
+        </ul>
+    </div>
+</nav>
+
+<ul class="sidenav black" id="slide_out">
+    <li><a href="index.html"><img src="./public/whitelogo2.png" style="width:100%; margin-top:36px;"></a></li>
+    <hr style="margin:1rem 2rem;">
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="achievements.html">Achievements</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+</ul>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    M.Sidenav.init(document.querySelectorAll('.sidenav'));
+});
+</script>
+
+<!-- ================= JUMBOTRON ================= -->
+<style>
+.jumbotron {
+    background-image: url("./public/darpa-dtcugv-b-c130.png");
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+</style>
+
+<div class="jumbotron">
+    <div class="hide-on-med-and-down"
+         style="font-size:6vw; color:#163960; font-weight:600;
+                padding-top:17vh; text-align:center;">
+        DARPA Triage Challenge
+    </div>
+</div>
+
+<!-- ================= TEAM SECTION ================= -->
+<style>
+.team_section {
+    margin: 0 9vw;
+    padding: 10vh 0;
+    text-align: center;
+}
+
+.teamheading {
+    font-size: 3.5vw;
+    font-weight: 600;
+    margin-bottom: 4vh;
+}
+
+.team_grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10vh;
+}
+@media (min-width:600px) {
+    .team_grid { grid-template-columns: 1fr 1fr; }
+}
+
+.team_card {
+    background: #0b0b0b;
+    border: 1px solid #ffffff22;
+    border-radius: 15px;
+    padding: 3vh 2vw;
+    text-align: left;
+}
+
+.phase_title {
+    text-align: center;
+    font-size: 2.3vw;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 2vh;
+}
+
+/* ===== TEAM MEMBERS ===== */
+.team-members {
+    margin-top: 1.5vh;
+    padding-top: 1.2vh;
+    border-top: 1px solid #ffffff22;
+}
+
+.member-heading {
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #cccccc;
+    margin-bottom: 0.6rem;
+    text-transform: uppercase;
+}
+
+.team-members p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: white;
+}
+
+.role {
+    color: #9fd3ff;
+    font-weight: 600;
+    font-size: 0.85em;
+}
+
+/* ===== SYSTEMS CTA ===== */
+.systems-link {
+    margin-top: 2vh;
+    padding-top: 1.2vh;
+    border-top: 1px dashed #ffffff33;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.systems-label {
+    font-size: 0.8rem;
+    color: #aaaaaa;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.systems-btn {
+    font-size: 0.9rem;
+    color: #9fd3ff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.25s ease;
+}
+.systems-btn:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+</style>
+
+<div class="team_section">
+    <div class="teamheading">TEAM</div>
+
+    <div class="team_grid">
+
+        <!-- Phase 1 -->
+        <div class="team_card">
+            <div class="phase_title">Phase 1</div>
+            <img src="./public/DarpaTeamP1.jpeg" style="width:100%; margin-bottom:1.5vh;">
+
+            <div class="team-members">
+                <div class="member-heading">Team Members</div>
+                <p>
+                    <strong>Suhani Grover</strong> <span class="role">(Project Lead)</span> ·
+                    Vasudevan V. R. · Harshit · Chirag Sehgal · Anuj · Arnav Joshi ·
+                    Shivansh Chaddha · Aaditya Bhatia · Aditya Vikram Singh ·
+                    Nishant Chandna · Gunmay Jhigran · Kush Garg · Saksham Jain ·
+                    Nikhil · Sudheindre Pai · Mohamad Gopal Krishna · Somin ·
+                    Bhavya · Yadu · Akshat Kaushal · Sahil · Akshit
+                </p>
+            </div>
+
+            <div class="systems-link">
+                <span class="systems-label">Systems Overview</span>
+                <a href="systems-phase-1.html" class="systems-btn">
+                    View Phase 1 Systems →
+                </a>
             </div>
         </div>
 
-        <script>
-            window.addEventListener("load", function () {
-                const loader = document.querySelector(".loader");
+        <!-- Phase 2 -->
+        <div class="team_card">
+            <div class="phase_title">Phase 2</div>
+            <img src="./public/DarpaTeamP2.png" style="width:100%; margin-bottom:1.5vh;">
 
-                loader.className += " hidden";
-            });
-        </script>
-
-
-
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                var elems = document.querySelectorAll('.sidenav');
-                var instances = M.Sidenav.init(elems, {});
-            });
-
-            $(document).ready(function () {
-                $('.collapsible').collapsible();
-            });
-        </script>
-
-        <style>
-            body {
-                font-family: 'Nunito Sans', sans-serif !important;
-                /* common font */
-            }
-
-            .main-wrapper {
-                position: relative;
-            }
-
-            .menu-holder {
-                position: fixed;
-                z-index: 50;
-            }
-
-            .sidenav-overlay {
-                z-index: 0;
-            }
-
-            nav {
-                color: white;
-            }
-
-            @media only screen and (min-width: 993px) {
-                nav a.sidenav-trigger {
-                    display: block;
-                }
-            }
-
-            .sidenav {
-                line-height: 1rem;
-            }
-
-            .sidenav li>a {
-                color: white;
-            }
-
-            .sidenav li>a>i.material-icons {
-                color: white;
-            }
-
-
-            ::-webkit-scrollbar {
-                display: none;
-            }
-
-            /* Track */
-            ::-webkit-scrollbar-track {
-                display: none;
-            }
-
-            /* Handle */
-            ::-webkit-scrollbar-thumb {
-                display: none;
-            }
-
-            /* Handle on hover */
-            ::-webkit-scrollbar-thumb:hover {
-                display: none;
-            }
-
-            .nav-links a {
-                font-family: 'Nunito Sans', sans-serif !important;
-                /* text-shadow: 0 0 10px #000b; */
-                font-size: 15px !important;
-                padding: 22px 0 10px 0 !important;
-                margin: 0 15px !important;
-                line-height: 100%;
-                text-transform: uppercase;
-            }
-
-            .nav-wrapper a:hover {
-                background-color: transparent !important;
-            }
-
-            .un::after {
-                content: '';
-                width: 0px;
-                height: 1.5px;
-                display: block;
-                background: #fff;
-                margin-top: 4px;
-                transition: 300ms;
-            }
-
-            .un:hover::after {
-                width: 100%;
-            }
-        </style>
-
-        <div class="main-wrapper">
-            <div class="menu-holder" style="width:100%" id="menu">
-                <nav class="transparent" style="height: 4rem; box-shadow: none; background-color: #000 !important;">
-                    <!-- navbar content here  -->
-                    <div class="nav-wrapper">
-                        <ul class="left">
-                            <li><a href="#" class=" sidenav-trigger" data-target="slide_out"
-                                    style="padding-top: 0rem;"><i class="material-icons"
-                                        style="font-size:1.5rem;  color: white;">menu</i></a></li>
-                        </ul>
-                        <ul>
-                            <li style="height: 5rem; width: 5rem;"><a href="index.html"
-                                    style="height: 5rem; width: 7rem; transform: translate(0, 0.5rem);"><img
-                                        src="./public/whitelogo3.png" alt="" style="margin-left: 0; height: 3rem;"></a>
-                            </li>
-                        </ul>
-                        <ul class="hide-on-med-and-down right nav-links" style="padding-right: 12rem;">
-                            <li><a href="curr-members.html" class="un">Team</a></li>
-                            <li><a href="about.html" class="un">About Us</a></li>
-                            <li><a href="achievements.html" class="un">Achievements</a></li>
-                            <li><a href="contact.html" class="un">Contact Us</a></li>
-                        </ul>
-                    </div>
-                </nav>
-
-                <ul class="sidenav #000000 black" style="color:#eeeeee;" id="slide_out">
-                    <!-- <li><a class="sidenav-close" href="#!"><i class="material-icons" style="font-size:2rem;">menu</i></a></li> -->
-                    <li><a href="index.html" style="width:100%; height: 100%;"><img src="./public/whitelogo2.png" alt=""
-                                style="transform:scale(2); width:100%; height: 100%; margin-top: 36px;"></a></li>
-                    <hr style="margin: 1rem 2.5rem 1rem 2rem;">
-                    <li><a href="index.html" class="active hide-on-med-and-up"><i class="material-icons">home</i>
-                            Home</a></li>
-                    <li><a href="about.html"><i class="material-icons">info</i> About Us</a></li>
-                    <li><a href="hangar.html"><i class="material-icons">airplanemode_active</i> Hangar</a></li>
-                    <li>
-                        <ul class="collapsible" style="padding-left: 1rem;">
-                            <li>
-                                <div class="collapsible-header"><i class="material-icons"
-                                        style="margin-right: 1.8rem;">group</i>
-                                    <b>Team</b>
-                                </div>
-                                <div class="collapsible-body">
-                                    <ul style="background: black; padding-left: 4rem;">
-                                        <li><a href="mentors.html">Mentors</a></li>
-                                        <li><a href="curr-members.html">Current Members</a></li>
-                                        <li><a href="past-members.html">Past Members</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                        </ul>
-                    </li>
-                    <li><a href="achievements.html"><i class="material-icons">emoji_events</i> Achievements</a></li>
-                    <li><a href="upcoming_events.html" class="active"><i class="material-icons">home</i> Upcoming
-                            Events</a></li>
-                    <li><a href="upcoming-projects.html" class="active"><i
-                                class="material-icons">precision_manufacturing</i>
-                            Upcoming Projects</a></li>
-                    <li><a href="solution.html" class="active"><i class="material-icons">settings</i> Solutions</a></li>
-                    <li><a href="contact.html"><i class="material-icons">email</i> Contact Us</a></li>
-                </ul>
+            <div class="team-members">
+                <div class="member-heading">Team Members</div>
+                <p>
+                    <strong>Chirag Sehgal</strong> <span class="role">(Project Lead)</span> ·
+                    Arnav Joshi · Anuj · Gunmay Jhigran · Nishant Chandna ·
+                    Aaditya Bhatia · Aditya Vikram Singh · Saksham Jain ·
+                    Akshat Kaushal · Vikrant Rathore · Sarthak Gupta ·
+                    Samiksha Chaudhari · Shivam Chawala · Updesh Dua ·
+                    Arsh Abbas Naqvi · Amrit Dey · Abhimanyu Singh ·
+                    Vansh Dhama · Shivam Sharma · Vasu Mahajan ·
+                    Vedansh Sachdev · Arjun Tomar · Vedant Krish Shankar
+                </p>
             </div>
 
-
-
-            <style>
-                .team_section {
-                    margin: 0 9vw;
-                    padding: 10vh 0;
-                    text-align: center;
-                }
-
-                .team_grid {
-                    margin-top: 4vh;
-                    display: grid;
-                    grid-template-columns: 1fr;
-                    gap: 10vh;
-                }
-
-                .team_card {
-                    background: #0b0b0b;
-                    border: 1px solid #ffffff22;
-                    border-radius: 15px;
-                    padding: 3vh 2vw;
-                    text-align: left;
-                }
-
-                .phase_title {
-                    font-size: 2.3vw;
-                    font-weight: 700;
-                    margin-bottom: 2vh;
-                    text-align: center;
-                    color: #ffffff;
-                }
-
-                .team_card .capabilities {
-                    margin: 0;
-                    padding-left: 1.2rem;
-                }
-
-                /* Desktop: 2 columns */
-                @media only screen and (min-width: 600px) {
-                    .team_grid {
-                        grid-template-columns: 1fr 1fr;
-                    }
-                }
-
-                /* Mobile tweaks */
-                @media only screen and (max-width: 600px) {
-                    .phase_title {
-                        font-size: 4.5vw;
-                    }
-                }
-
-                nav.transparent {
-                    background-color: black !important;
-                    position: fixed !important;
-                    top: 0;
-                }
-
-                .about div {
-                    font-weight: 700;
-                    font-size: 4vw;
-                }
-
-                .para1 {
-                    margin: 0 9vw;
-                    padding-top: 1.5vw;
-                    font-size: 1.5vw;
-                    text-align: center;
-                }
-
-                .team_capabilities {
-                    margin: 0 9vw;
-                    padding-top: 15vh;
-                }
-
-                @media only screen and (min-width: 600px) {
-                    .jumbotron {
-                        background-image: url("./public/darpa-dtcugv-b-c130.png");
-                        height: 100.5vh;
-                        background-position: 0 -10%;
-                        background-size: cover;
-                    }
-
-                    .team_capabilities {
-                        font-size: 1.5vw;
-                    }
-
-                    .teamheading {
-                        font-size: 3.5vw;
-                        font-weight: 600;
-                    }
-                }
-
-                @media only screen and (max-width: 600px) {
-                    .jumbotron {
-                        background-image: url("./public/darpa-dtcugv-b-c130.png");
-                        height: 50vh;
-                        background-position: 0 -10%;
-                        background-size: cover;
-                    }
-
-                    .para1 {
-                        font-size: 3vw;
-                    }
-
-                    .team_capabilities {
-                        font-size: 3vw;
-                    }
-
-                    .teamheading {
-                        font-size: 5vw;
-                        font-weight: 600;
-                    }
-                }
-            </style>
-
-            <div class="jumbotron">
-                <div class="hide-on-med-and-down"
-                    style="font-size: 6vw; color: #163960; text-shadow: 0 0 10px #0003; font-weight:600; padding-top: 17vh; text-align: center; letter-spacing: 3px;">
-                    DARPA Triage Challenge
-                </div>
+            <div class="systems-link">
+                <span class="systems-label">Systems Evolution</span>
+                <a href="systems-phase-2.html" class="systems-btn">
+                    View Phase 2 Systems →
+                </a>
             </div>
-
-            <div>
-                <!-- TEAM COLUMN / SECTION -->
-                <div class="team_section">
-                    <div class="teamheading">TEAM</div>
-
-                    <div class="team_grid">
-                        <div class="team_card">
-                            <div class="phase_title">Phase 1</div>
-                            <img src="./public/DarpaTeamP1.jpeg" alt="DTC UGV" style="width:100%; margin-bottom:2vh;">
-                            <ul class="capabilities">
-                                <li>Systems Integration</li>
-                                <li>Perception & Detection</li>
-                                <li>Teleoperation / HMI</li>
-                                <li>Networking & Communications</li>
-                                <li>Field Testing & Validation</li>
-                            </ul>
-                        </div>
-
-                        <div class="team_card">
-                            <div class="phase_title">Phase 2</div>
-                            <img src="./public/DarpaTeamP2.png" alt="DTC UGV" style="width:100%; margin-bottom:2vh;">
-                            <ul class="capabilities">
-                                <li>Autonomy & Navigation</li>
-                                <li>Triage Pipeline / AI</li>
-                                <li>Mapping & Localization</li>
-                                <li>Hardware & Payload Integration</li>
-                                <li>Deployment & Reliability</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
         </div>
 
-        <script>
-            document.title = "DTC • UAS-DTU";
-        </script>
+    </div>
+</div>
 
-        <section id="footer">
-            <style>
-                .logos a>i {
-                    padding-right: 0.4rem;
-                }
-
-                #contact .col {
-                    padding-right: 2rem;
-                    color: #cccccc;
-                }
-
-                #contact .map {
-                    text-align: left;
-                }
-
-                #contact .row {
-                    margin-bottom: 0;
-                }
-
-                .logos a {
-                    color: grey
-                }
-
-                @media only screen and (min-width:800px) {
-                    .row #g_map {
-                        padding-left: 3vw;
-                        padding-right: 3vw;
-                    }
-                }
-            </style>
-
-            <div id="contact" style="padding: 0 4rem 0 4rem; background:black; position: relative;">
-                <div class="row">
-                    <div class="col l3 m12 s12">
-                        <h4 style="white-space: nowrap;">UAS-DTU</h4>
-                        <p class="text">A team of enthusiastic undergraduates building indigenous unmanned systems
-                            for real-world missions.</p>
-                        <div class="logos">
-                            <a href="https://www.facebook.com/uas.dtu/" target="blank"><i
-                                    class="fab fa-facebook-square fa-2x"></i></a>
-                            <a href="https://in.linkedin.com/company/uas-dtu" target="blank"><i
-                                    class="fab fa-linkedin fa-2x"></i></i></a>
-                            <a href="https://www.youtube.com/channel/UCmOV4uiBHoHzf5ZrE1z6WQg" target="blank"><i
-                                    class="fab fa-youtube fa-2x"></i></a>
-                            <a href="https://www.instagram.com/uas_dtu/" target="blank"><i
-                                    class="fab fa-instagram fa-2x"></i></i></a>
-                        </div>
-                    </div>
-
-                    <div class="col l6 m12 s12" id="g_map">
-                        <h4 class="map">Map help:</h4>
-                        <div style="overflow: hidden;">
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3498.027403024808!2d77.11499645105123!3d28.748598782285452!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d01270184b37d%3A0x31d84edc5468f356!2sUAS+DTU!5e0!3m2!1sen!2sin!4v1516991611933"
-                                frameborder="0" style="border:0; width:50rem;height:15rem;"></iframe>
-                        </div>
-
-                    </div>
-
-
-                    <div class="col l3 m12 s12">
-                        <h4>Reach us at:</h4>
-                        <p class="text">LW2FF1, Delhi Technological University, Delhi - 110042</p>
-                        <p id="phone1"><i class="fas fa-phone-alt"></i> +91-84484 60692</p>
-                        <p><i class="fas fa-phone-alt"></i> +91-78383 72964</p>
-                        <p><i class="fas fa-phone-alt"></i> +91-83838 43931 </p>
-                        <p><i class="fas fa-envelope"></i> uasdtu@dtu.ac.in</p>
-                        <p>&copy; 2026 UAS-DTU. All rights reserved.</p>
-
-                    </div>
-
-                </div>
+<!-- ================= FOOTER ================= -->
+<section id="footer">
+    <div id="contact" style="padding: 0 4rem; background:black;">
+        <div class="row">
+            <div class="col l3 m12 s12">
+                <h4>UAS-DTU</h4>
+                <p>A team of enthusiastic undergraduates building indigenous unmanned systems.</p>
             </div>
 
-        </section>
-    </body>
+            <div class="col l6 m12 s12">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3498.027403024808!2d77.11499645105123!3d28.748598782285452!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d01270184b37d%3A0x31d84edc5468f356!2sUAS+DTU!5e0!3m2!1sen!2sin!4v1516991611933"
+                    width="100%" height="240" style="border:0;" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
 
+            <div class="col l3 m12 s12">
+                <h4>Reach us at:</h4>
+                <p>uasdtu@dtu.ac.in</p>
+                <p>© 2026 UAS-DTU</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+document.title = "DTC • UAS-DTU";
+</script>
+
+</body>
 </html>
