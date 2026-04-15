@@ -44,11 +44,11 @@
   "homepage": "https://github.com/alvarotrigo/fullPage.js",
   "namespace": "fullpage_api",
   "devDependencies": {
-    "gulp": "^4.0.0",
+    "gulp": "^5.0.1",
     "gulp-clean-css": "^4.0.0",
     "gulp-rename": "^1.2.2",
     "gulp-replace": "^1.0.0",
-    "gulp-sass": "^4.0.2",
+    "gulp-sass": "^6.0.1",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-uglify": "^3.0.0"
   }
