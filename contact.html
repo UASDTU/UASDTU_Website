@@ -99,7 +99,7 @@
     </div>
 
     <script>
-      window.addEventListener("load", function () {
+      document.addEventListener("DOMContentLoaded", function () {
         const loader = document.querySelector(".loader");
 
         loader.className += " hidden";
@@ -123,10 +123,14 @@
       body {
         font-family: 'Nunito Sans', sans-serif !important;
         /* common font */
+        background-color: #05070c;
       }
 
       .main-wrapper {
         position: relative;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
       }
 
       .menu-holder {
@@ -280,44 +284,112 @@
           line-height: 200% !important;
         }
 
+        .main {
+          background: linear-gradient(160deg, #0b1220 0%, #142544 45%, #1f3f6e 100%);
+        }
+
+        .contact-card {
+          text-align: center;
+          background: rgba(255, 255, 255, 0.04);
+          border: 1px solid rgba(255, 255, 255, 0.09);
+          border-radius: 16px;
+          padding: 2.5rem 1.5rem;
+          transition: transform 250ms ease, background 250ms ease, border-color 250ms ease;
+        }
+
+        .contact-card:hover {
+          transform: translateY(-6px);
+          background: rgba(255, 255, 255, 0.07);
+          border-color: rgba(107, 158, 227, 0.5);
+        }
+
+        .contact-card .icon-circle {
+          width: 62px;
+          height: 62px;
+          border-radius: 50%;
+          background: linear-gradient(135deg, #2f5aa0, #6b9ee3);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0 auto 1.2rem auto;
+          box-shadow: 0 8px 20px rgba(47, 90, 160, 0.45);
+        }
+
+        .contact-card .icon-circle i {
+          color: #fff;
+          font-size: 1.5rem;
+        }
+
+        .contact-card h3 {
+          color: #8fb4ec;
+          letter-spacing: 1px;
+          font-size: 1.15rem;
+          margin-bottom: 1rem;
+        }
+
+        .contact-card .socials a {
+          color: #8fb4ec;
+          font-size: 1.4rem;
+          margin: 0 0.5rem;
+          transition: color 200ms ease;
+        }
+
+        .contact-card .socials a:hover {
+          color: #fff;
+        }
+
         @media only screen and (max-width: 1000px) {
           .main h2 {
             font-size: 50px !important;
           }
-
-          .middle {
-            border-width: 0 !important;
-          }
         }
       </style>
 
-      <div class="main" style="padding: 40px 0; background-color: #333;">
-        <h2 style="margin: 25vh 0 0 0; text-align: center; font: 500 80px 'Saira Semi Condensed'; color: #aaa;">CONTACT
+      <div class="main" style="padding: 40px 0 70px 0;">
+        <h2 style="margin: 15vh 0 0 0; text-align: center; font: 500 80px 'Saira Semi Condensed'; color: #fff;">CONTACT
           US</h2>
-        <p style="margin: 5vh 25vw 25vh 25vw; color: #ddd; font-size: 20px; text-align: center;">We are a team of
-          enthusiastic undergraduates, working to providing the solutions for a better future.</p>
-        <div class="row" style="margin: 10vh 0;">
-          <div class="col l4 s12" style="text-align: center; padding: 0 40px;">
-            <h3 style="color: orangered;">VISIT US</h3>
-            <p style="color: #eee;" class="text">
+        <div
+          style="width: 80px; height: 4px; background: linear-gradient(90deg, #2f5aa0, #6b9ee3); margin: 1.5rem auto 0 auto; border-radius: 2px;">
+        </div>
+        <p style="margin: 3vh 22vw 7vh 22vw; color: #cdd9ee; font-size: 20px; text-align: center;">We are a team of
+          enthusiastic undergraduates, working to providing the solutions for a better future. Reach out to us —
+          we'd love to hear from you.</p>
+        <div
+          style="margin: 0 4vw 3vh 4vw; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem;">
+          <div class="contact-card">
+            <div class="icon-circle"><i class="fas fa-map-marker-alt"></i></div>
+            <h3>VISIT US</h3>
+            <p style="color: #dde6f5;" class="text">
               LW2FF1, Delhi Technological University,<br>
               Delhi - 110042
             </p>
           </div>
-          <div class="col l4 s12 middle"
-            style="text-align: center; border-left: 2px solid #888; border-right: 2px solid #888;">
-            <h3 style="color: orangered;">CALL US</h3>
-            <p style="color: #eee;" class="text">
+          <div class="contact-card">
+            <div class="icon-circle"><i class="fas fa-phone-alt"></i></div>
+            <h3>CALL US</h3>
+            <p style="color: #dde6f5;" class="text">
               +91-96251 48396<br>
               +91-98919 59503<br>
               +91-99996 97291
             </p>
           </div>
-          <div class="col l4 s12" style="text-align: center; padding: 0 40px;">
-            <h3 style="color: orangered;">CONTACT US</h3>
-            <p style="color: #eee;" class="text">
+          <div class="contact-card">
+            <div class="icon-circle"><i class="fas fa-envelope"></i></div>
+            <h3>EMAIL US</h3>
+            <p style="color: #dde6f5;" class="text">
               uasdtu@dtu.ac.in
             </p>
+          </div>
+          <div class="contact-card">
+            <div class="icon-circle"><i class="fas fa-share-alt"></i></div>
+            <h3>FOLLOW US</h3>
+            <div class="socials">
+              <a href="https://www.facebook.com/uas.dtu/" target="blank"><i class="fab fa-facebook-square"></i></a>
+              <a href="https://in.linkedin.com/company/uas-dtu" target="blank"><i class="fab fa-linkedin"></i></a>
+              <a href="https://www.youtube.com/channel/UCmOV4uiBHoHzf5ZrE1z6WQg" target="blank"><i
+                  class="fab fa-youtube"></i></a>
+              <a href="https://www.instagram.com/uas_dtu/" target="blank"><i class="fab fa-instagram"></i></a>
+            </div>
           </div>
         </div>
       </div>
@@ -332,7 +404,7 @@
         document.title = "Contact • UAS-DTU";
       </script>
 
-      <section id="footer">
+      <section id="footer" style="flex: 1; display: flex;">
         <style>
           .logos a>i {
             padding-right: 0.4rem;
@@ -355,6 +427,11 @@
             color: grey
           }
 
+          #g_map iframe {
+            width: 100%;
+            height: 18rem;
+          }
+
           @media only screen and (min-width:800px) {
             .row #g_map {
               padding-left: 3vw;
@@ -362,8 +439,9 @@
             }
           }
         </style>
-        <div id="contact" style="padding: 0 4rem 0 4rem; background:black; position: relative;">
-          <div class="row">
+        <div id="contact"
+          style="padding: 3rem 4rem; background:black; position: relative; width: 100%; display: flex; align-items: center;">
+          <div class="row" style="width: 100%;">
             <div class="col l3 m12 s12">
               <h4 style="white-space: nowrap;">UAS-DTU</h4>
               <p class="text">A team of enthusiastic undergraduates building indigenous unmanned systems
@@ -382,10 +460,10 @@
 
             <div class="col l6 m12 s12" id="g_map">
               <h4 class="map">Map help:</h4>
-              <div style="overflow: hidden;">
+              <div style="overflow: hidden; border-radius: 12px;">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3498.027403024808!2d77.11499645105123!3d28.748598782285452!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d01270184b37d%3A0x31d84edc5468f356!2sUAS+DTU!5e0!3m2!1sen!2sin!4v1516991611933"
-                  frameborder="0" style="border:0; width:35rem;height:10.5rem;"></iframe>
+                  frameborder="0" style="border:0;"></iframe>
               </div>
 
             </div>
