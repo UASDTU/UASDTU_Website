@@ -99,11 +99,12 @@
     </div>
 
     <script>
-      document.addEventListener("load", function () {
+      window.addEventListener("load", hideLoader);
+      setTimeout(hideLoader, 10000);
+      function hideLoader() {
         const loader = document.querySelector(".loader");
-
-        loader.className += " hidden";
-      });
+        if (loader) loader.classList.add("hidden");
+      }
     </script>
 
 

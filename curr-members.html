@@ -384,10 +384,12 @@
         </div>
 
         <script>
-            document.addEventListener("load", function () {
-                const loader = document.querySelector(".loader");
-                if (loader) loader.classList.add("hidden");
-            });
+            window.addEventListener("load", hideLoader);
+            setTimeout(hideLoader, 10000);
+            function hideLoader() {
+              const loader = document.querySelector(".loader");
+              if (loader) loader.classList.add("hidden");
+            }
         </script>
 
         <script>
